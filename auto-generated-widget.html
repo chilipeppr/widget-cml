@@ -69,13 +69,13 @@
     background-color: #a40000;
 }
 .top-phone-jimmyjohn {
-    background-color: #ccc;
+    background-color: #bbb;
 }
 
 .panel-body {
     background-color: #f0f0f0;
-    /*height:300px;*/
-    height:50%;
+    height:600px;
+    /*height:50%;*/
     overflow-y: auto;
     padding:8px;
 }
@@ -614,6 +614,24 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
         </div>
         <div class="panel-body">
             
+
+            <div class="bubble-in hidden">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content" xstyle="padding:0;">
+                    <p style="padding: 0;">Hi John, your last order was 1 #5 Vito, 1 
+                    Jalapeno Jimmy Chips, and 1 Jumbo Kosher Dill Pickle.</p>
+                    <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
+                    <div style="padding: 0;">
+                        <button class="btn btn-default">Delivery</button>
+                        <button class="btn btn-default">Pickup</button>
+                        <button class="btn btn-default">Repeat Last Order</button>
+                    </div>
+                </div>
+            </div>
+            
+     
+
             <div class="bubble-out">
                 <div class="bubble-out-triangle">
                 </div>
@@ -622,6 +640,7 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 </div>
             </div>
             
+
             <div class="bubble-in">
                 <div class="bubble-in-triangle">
                 </div>
@@ -651,6 +670,7 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 </div>
             </div>
             
+    
             <div class="bubble-out">
                 <div class="bubble-out-triangle">
                 </div>
@@ -659,6 +679,7 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 </div>
             </div>
             
+    
             <div class="bubble-in">
                 <div class="bubble-in-triangle">
                 </div>
@@ -669,7 +690,8 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 </div>
             </div>
             
-            <div class="bubble-out">
+
+        <div class="bubble-out">
                 <div class="bubble-out-triangle">
                 </div>
                 <div class="bubble-content bubble-out-content">
@@ -679,11 +701,15 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 </div>
             </div>
 
+
             <div class="bubble-in">
                 <div class="bubble-in-triangle">
                 </div>
                 <div class="bubble-content bubble-in-content" style="padding:0;">
                 
+                <!--<cml>-->
+                <!--<meta tag="creditcardprompt">-->
+                <!--<meta tag="selectaddress">-->
                 <p style="padding:10px;">
                     [Order verify / receipt ]
                     <ul>
@@ -694,9 +720,40 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                     <li>1 Chocolate Chunk Cookie - $3.56</li>
                     </ul>
                     Total: $23.23
+                    
+                    What credit card would like to put this order on?
+                </p>
+                <!--<fallback ="">asdfasdf aasdf</fallback>-->
+                <!--</cml>-->
+                
+                </div>
+            </div>
+            
+            <div class="bubble-out">
+                <div class="bubble-out-triangle">
+                </div>
+                <div class="bubble-content bubble-out-content">
+                    Visa **** **** *** 1234<br>
+                    Exp: 04/20<br>
+                    CID: ***
+                </div>
+            </div>
+            
+            <div class="bubble-in">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content" style="padding:0;">
+                
+                <p style="padding:10px;">
+                    What credit card would like to put this order on?
                 </p>
                 
-                
+                <iframe
+                      width="100%"
+                      height="80px"
+                      frameborder="0" style="border:0; margin-bottom:-6px;"
+                      src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
+                    </iframe>
                 </div>
             </div>
             
@@ -719,23 +776,40 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 </div>
             </div>
             
+
             <div class="bubble-in">
                 <div class="bubble-in-triangle">
                 </div>
                 <div class="bubble-content bubble-in-content">
-                <img src="jimmyjohn-jeff.png" style="width:60px;float: left;margin-right: 10px;">
-                    Jeff just left the store and is bike delivering your order. Should be there 
+                    <table><tr>
+                    <td>
+                        <img src="jimmyjohn-jeff.png" style="width:60px;Xfloat: left;margin-right: 10px;">
+                    </td>
+                    <td>
+                        Jeff just left the store and is bike delivering your order. Should be there 
                     in 10 minutes.
+                    </td>
+                    </tr></table>
+                
+                    
                 </div>
             </div>
             
+
             <div class="bubble-in">
                 <div class="bubble-in-triangle">
                 </div>
                 <div class="bubble-content bubble-in-content">
-                <img src="jimmyjohn-jeff.png" style="width:60px;float: left;margin-right: 10px;">
-                Hi John, I'm in the lobby of the building but can't get up the elevators 
+                <table><tr>
+                    <td>
+                        <img src="jimmyjohn-jeff.png" style="width:60px;Xfloat: left;margin-right: 10px;">
+                    </td>
+                    <td>
+                         Hi John, I'm in the lobby of the building but can't get up the elevators 
                 because they're locked.
+                    </td>
+                    </tr></table>
+               
                 </div>
             </div>
             
@@ -747,11 +821,15 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 </div>
             </div>
             
+            <div class="hidden">
+
+            </div>
+            
         </div>
         <div class="panel-footer">
             
             <!-- Jimmy John -->
-            <div class="banner" style="border-bottom:1px solid #ddd; ">
+            <div class="banner hidden" style="border-bottom:1px solid #ddd; ">
                 <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <!--<div class="jimmyjohn-sidebanner"></div>-->
                 <div class="jimmyjohn-wrapper" style="padding:14px;">
@@ -762,6 +840,18 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                         <button class="btn btn-default">Delivery</button>
                         <button class="btn btn-default">Pickup</button>
                         <button class="btn btn-default">Repeat Last Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="banner hidden" style="border-bottom:1px solid #ddd; ">
+                <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <!--<div class="jimmyjohn-sidebanner"></div>-->
+                <div class="jimmyjohn-wrapper" style="padding:14px;">
+                    <p style="padding: 0;">[icon] 2 #5 Vitos</p>
+                    <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
+                    <div style="padding: 0;">
+                        <button class="btn btn-default">Order It</button>
                     </div>
                 </div>
             </div>
