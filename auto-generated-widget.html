@@ -18,45 +18,71 @@
 
 #com-chilipeppr-widget-cml {
     /*font-family: Droid Sans;*/
+    height:100%;
+    position:relative;
 }
-
+.overlay-placement {
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image: url('screen.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity:0.5;
+}
 .darkbg {
     background-color: #000;
 }
 .panel-heading {
     padding:0;
-    background-color: #a40000;
+    background-color: none;
+    /*background-color: #a40000;*/
     /*height:100px;*/
 }
 .arrow {
-    margin-left:16px;
-    margin-right:2px;
+    margin-left:12px;
+    margin-right:0px;
+    width:20px;
 }
 .phone {
     color:white;
-    font-size:30px;
+    font-size:20px;
+}
+.phone.phone-number {
+    line-height: 20px;
 }
 .phone.phone-desc {
-    font-size:16px;
+    font-size:12px;
 }
 .phone-img {
     margin-left:16px;
-    margin-right:28px;
-    height:28px;
+    margin-right:24px;
+    height:20px;
 }
 .dots {
-    height:28px;
-    margin-right: 22px;
+    height:20px;
+    margin-right: 20px;
+}
+
+.top-phone-generic {
+    background-color: #a40000;
+}
+.top-phone-jimmyjohn {
+    background-color: #ccc;
 }
 
 .panel-body {
     background-color: #f0f0f0;
-    height:300px;
+    /*height:300px;*/
+    height:50%;
     overflow-y: auto;
+    padding:8px;
 }
 .bubble-content {
     padding-left:16px;
-    font-size:20px;
+    padding-right:16px;
+    font-size:16px;
     background-color:white;
     padding-top:8px;
     padding-bottom:8px;
@@ -70,16 +96,16 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
-    width:10px;
+    width:8px;
     height:30px;
     /*background-color: green;*/
 }
 .bubble-in-content {
-    border-left:10px solid #fc3030;
+    border-left:4px solid #fc3030;
     margin-right:60px;
-    margin-left:10px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    margin-left:8px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 .bubble-out {
     margin-top:10px;
@@ -90,16 +116,16 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top;
-    width:10px;
+    width:8px;
     height:30px;
     /*background-color: green;*/
 }
 .bubble-out-content {
-    border-right:10px solid #30c6fc;
-    margin-right:10px;
+    border-right:4px solid #30c6fc;
+    margin-right:8px;
     margin-left:60px;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 .panel-footer {
     /*position:relative;*/
@@ -110,30 +136,30 @@
 }
 .col-compose {
     width:100%;
-    padding-left:14px;
+    padding-left:10px;
 }
 .compose-box {
     width:100%;
     border:none;
     outline:none;
-    height:80px;
+    height:60px;
     /*float:left;*/
     /*margin-left:16px;*/
-    font-size:20px;
+    font-size:16px;
     /*margin-right:10px;*/
 }
 .graycircle {
     /*float:left;*/
     background-color: #aaa;
-    border-radius:50px;
-    height:50px;
-    width:50px;
+    border-radius:40px;
+    height:40px;
+    width:40px;
 }
 .plussign {
-    margin-left:16px;
-    font-size:60px;
+    margin-left:8px;
+    font-size:40px;
     font-weight: bold;
-    line-height: 50px;
+    line-height: 40px;
     text-align: center;
     color:#4c4c4c;
 }
@@ -141,10 +167,20 @@
     margin-left:16px;
 }
 .microphone {
-    margin-left:16px;
+    margin-left:10px;
     margin-right:16px;
     text-align: center;
-    line-height: 48px;
+    line-height: 38px;
+}
+
+.jimmyjohn-sidebanner {
+    background-image: url("jimmyjohn-face.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:80px;
+    height:160px;
+    /*height: 100%;*/
+    float:left;
 }
     </style>
 
@@ -220,7 +256,10 @@ cprequire_test(["inline:com-chilipeppr-widget-cml"], function(myWidget) {
 
     // init my widget
     myWidget.init();
-    $('#' + myWidget.id).css('margin', '20px');
+    // $('#' + myWidget.id).css('margin', '20px');
+    $('body').css('padding', '20px');
+    $('body').css('height', '100%');
+    $('html').css('height', '100%');
     $('title').html(myWidget.name);
 
 } /*end_test*/ );
@@ -508,16 +547,27 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
 
 <body class="darkbg">
     <div id="com-chilipeppr-widget-cml" class="xpanel xpanel-default">
+        
+        <div class="toolbar-usecase" style="padding-bottom:20px;">
+            <button class="btn btn-default">Jimmy Johns</button>
+        </div>
+
+        <!-- Overlay for placement -->
+        <div class="overlay-placement">
+            <!--<img src="screen.png">-->
+        </div>
+        
         <div class="panel-heading ">
             
             <div class="topbar">
                 <img src="topbar.png" style="width:100%">
             </div>
             
-            <table style="height:80px;">
+            <!-- Generic -->
+            <table class="top-phone-region top-phone-generic hidden" style="height:50px;">
             <tr valign="middle">
                 <td>
-                    <img class="arrow" src="arrow.png" style="width:30px;">
+                    <img class="arrow" src="arrow.png">
                 </td>
                 <td class="col-compose">
                     <div class="phone phone-number">
@@ -536,14 +586,68 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
             </tr>
             </table>
             
+            <!-- Jimmy John -->
+            <table class="top-phone-region top-phone-jimmyjohn" style="height:50px;">
+            <tr valign="middle">
+                <td>
+                    <img class="arrow" src="arrow.png">
+                </td>
+                <td>
+                    <img src="lockicon.png" style="margin-left:10px;height:10px;margin-bottom:30px;">
+                </td>
+                <td>
+                    <img src="jimmyjohn-logo.png" style="margin-left:2px;height:40px;">
+                </td>
+                <td class="col-compose" style="xtext-align:center;color:white;">
+                    <div style="xline-height:12px;font-size:14px;">South Lake Union Store</div>
+                    <div style="line-height:1opx;font-size:10px;">(206) 434-9499</div>
+                </td>
+                <td>
+                    <img class="phone-img" src="phone.png">
+                </td>
+                <td>
+                    <img class="dots" src="dots.png">
+                </td>
+            </tr>
+            </table>
+
         </div>
         <div class="panel-body">
+            
+            <div class="bubble-out">
+                <div class="bubble-out-triangle">
+                </div>
+                <div class="bubble-content bubble-out-content">
+                    Delivery. 
+                </div>
+            </div>
             
             <div class="bubble-in">
                 <div class="bubble-in-triangle">
                 </div>
-                <div class="bubble-content bubble-in-content">
-                    Incoming bubble here where i have lots of text, so i need to make the font size bigger to truly rep
+                <div class="bubble-content bubble-in-content" style="padding:0;">
+                    <p style="padding:10px;">
+                    Hi John, sure, we can get that delivery order out to you. What delivery 
+                    address would you like it delivered to?
+                    </p>
+                    
+                    <iframe
+                      width="100%"
+                      height="120px"
+                      frameborder="0" style="border:0; margin-bottom:-6px;"
+                      src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
+                    </iframe>
+                    <!--<button class="btn btn-default" style="xfloat:left;">-->
+                    <!--    Home<br>-->
+                    <!--    <div style="font-size:10px;text-align:left;">2917 W Eaton St<br>-->
+                    <!--    Seattle, WA 98199</div>-->
+                    <!--</button>-->
+                    <!--<button class="btn btn-default" style="xfloat:left;">-->
+                    <!--    Work<br>-->
+                    <!--    <div style="font-size:10px;text-align:left;">2401 4th Ave<br>-->
+                    <!--    Suite 600<br>-->
+                    <!--    Seattle, WA 98199</div>-->
+                    <!--</button>-->
                 </div>
             </div>
             
@@ -551,7 +655,7 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 <div class="bubble-out-triangle">
                 </div>
                 <div class="bubble-content bubble-out-content">
-                    Incoming bubble here where i have lots of text, so i need to make the font size bigger to truly rep
+                    2401 4th Ave, Suite 600, Seattle, WA 98121
                 </div>
             </div>
             
@@ -559,12 +663,108 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 <div class="bubble-in-triangle">
                 </div>
                 <div class="bubble-content bubble-in-content">
-                    Incoming bubble here where i have lots of text, so i need to make the font size bigger to truly rep
+                Ok, we can deliver there. What would you like?
+                <!--<button class="btn btn-default" style="xfloat:left;">Menu</button>-->
+                <img src="jimmyjohn-menu.png" style="width:280px;">
+                </div>
+            </div>
+            
+            <div class="bubble-out">
+                <div class="bubble-out-triangle">
+                </div>
+                <div class="bubble-content bubble-out-content">
+                    3 #5 Vito, 1 J.J.B.L.T, 1 #1 Pepe, 3 BBQ Jimmy Chips, 
+                    2 Salt & Vineger Jimmy Chips, 4 Pickle (Whole),
+                    1 Chocolate Chunk Cookie
                 </div>
             </div>
 
+            <div class="bubble-in">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content" style="padding:0;">
+                
+                <p style="padding:10px;">
+                    [Order verify / receipt ]
+                    <ul>
+                    <li>3 #5 Vito, 1 J.J.B.L.T - $15.43</li>
+                    <li>1 #1 Pepe, 3 BBQ Jimmy Chips - $6.33</li>
+                    <li>2 Salt & Vineger Jimmy Chips - $2.54</li>
+                    <li>4 Pickle (Whole) - $1.75</li>
+                    <li>1 Chocolate Chunk Cookie - $3.56</li>
+                    </ul>
+                    Total: $23.23
+                </p>
+                
+                
+                </div>
+            </div>
+            
+            <div class="bubble-in">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content" style="padding:0;">
+                
+                <p style="padding:10px;">
+                    We will get that delivered to you in 15 minutes. You can watch the delivery 
+                status on the map below or in your Android notification pulldown.
+                </p>
+                
+                <iframe
+                      width="100%"
+                      height="80px"
+                      frameborder="0" style="border:0; margin-bottom:-6px;"
+                      src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="bubble-in">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content">
+                <img src="jimmyjohn-jeff.png" style="width:60px;float: left;margin-right: 10px;">
+                    Jeff just left the store and is bike delivering your order. Should be there 
+                    in 10 minutes.
+                </div>
+            </div>
+            
+            <div class="bubble-in">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content">
+                <img src="jimmyjohn-jeff.png" style="width:60px;float: left;margin-right: 10px;">
+                Hi John, I'm in the lobby of the building but can't get up the elevators 
+                because they're locked.
+                </div>
+            </div>
+            
+            <div class="bubble-out">
+                <div class="bubble-out-triangle">
+                </div>
+                <div class="bubble-content bubble-out-content">
+                    Oh, sorry, I'll come down right now.
+                </div>
+            </div>
+            
         </div>
         <div class="panel-footer">
+            
+            <!-- Jimmy John -->
+            <div class="banner" style="border-bottom:1px solid #ddd; ">
+                <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <!--<div class="jimmyjohn-sidebanner"></div>-->
+                <div class="jimmyjohn-wrapper" style="padding:14px;">
+                    <p style="padding: 0;">Hi John, your last order was 1 #5 Vito, 1 
+                    Jalapeno Jimmy Chips, and 1 Jumbo Kosher Dill Pickle.</p>
+                    <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
+                    <div style="padding: 0;">
+                        <button class="btn btn-default">Delivery</button>
+                        <button class="btn btn-default">Pickup</button>
+                        <button class="btn btn-default">Repeat Last Order</button>
+                    </div>
+                </div>
+            </div>
             
             <table><tr valign="middle">
                 <td>
@@ -577,12 +777,12 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 </td>
                 <td>
                     <div class="smiley">
-                        <img src="smiley.png" style="width:30px;">    
+                        <img src="smiley.png" style="width:24px;">    
                     </div>
                 </td>
                 <td>
                     <div class="graycircle microphone">
-                        <img src="mic.png" style="width:23px;">
+                        <img src="mic.png" style="width:18px;">
                     </div>
                 </td>
             </tr></table>

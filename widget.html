@@ -33,16 +33,27 @@
 
 <body class="darkbg">
     <div id="com-chilipeppr-widget-cml" class="xpanel xpanel-default">
+        
+        <div class="toolbar-usecase" style="padding-bottom:20px;">
+            <button class="btn btn-default">Jimmy Johns</button>
+        </div>
+
+        <!-- Overlay for placement -->
+        <div class="overlay-placement">
+            <!--<img src="screen.png">-->
+        </div>
+        
         <div class="panel-heading ">
             
             <div class="topbar">
                 <img src="topbar.png" style="width:100%">
             </div>
             
-            <table style="height:80px;">
+            <!-- Generic -->
+            <table class="top-phone-region top-phone-generic hidden" style="height:50px;">
             <tr valign="middle">
                 <td>
-                    <img class="arrow" src="arrow.png" style="width:30px;">
+                    <img class="arrow" src="arrow.png">
                 </td>
                 <td class="col-compose">
                     <div class="phone phone-number">
@@ -61,14 +72,68 @@
             </tr>
             </table>
             
+            <!-- Jimmy John -->
+            <table class="top-phone-region top-phone-jimmyjohn" style="height:50px;">
+            <tr valign="middle">
+                <td>
+                    <img class="arrow" src="arrow.png">
+                </td>
+                <td>
+                    <img src="lockicon.png" style="margin-left:10px;height:10px;margin-bottom:30px;">
+                </td>
+                <td>
+                    <img src="jimmyjohn-logo.png" style="margin-left:2px;height:40px;">
+                </td>
+                <td class="col-compose" style="xtext-align:center;color:white;">
+                    <div style="xline-height:12px;font-size:14px;">South Lake Union Store</div>
+                    <div style="line-height:1opx;font-size:10px;">(206) 434-9499</div>
+                </td>
+                <td>
+                    <img class="phone-img" src="phone.png">
+                </td>
+                <td>
+                    <img class="dots" src="dots.png">
+                </td>
+            </tr>
+            </table>
+
         </div>
         <div class="panel-body">
+            
+            <div class="bubble-out">
+                <div class="bubble-out-triangle">
+                </div>
+                <div class="bubble-content bubble-out-content">
+                    Delivery. 
+                </div>
+            </div>
             
             <div class="bubble-in">
                 <div class="bubble-in-triangle">
                 </div>
-                <div class="bubble-content bubble-in-content">
-                    Incoming bubble here where i have lots of text, so i need to make the font size bigger to truly rep
+                <div class="bubble-content bubble-in-content" style="padding:0;">
+                    <p style="padding:10px;">
+                    Hi John, sure, we can get that delivery order out to you. What delivery 
+                    address would you like it delivered to?
+                    </p>
+                    
+                    <iframe
+                      width="100%"
+                      height="120px"
+                      frameborder="0" style="border:0; margin-bottom:-6px;"
+                      src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
+                    </iframe>
+                    <!--<button class="btn btn-default" style="xfloat:left;">-->
+                    <!--    Home<br>-->
+                    <!--    <div style="font-size:10px;text-align:left;">2917 W Eaton St<br>-->
+                    <!--    Seattle, WA 98199</div>-->
+                    <!--</button>-->
+                    <!--<button class="btn btn-default" style="xfloat:left;">-->
+                    <!--    Work<br>-->
+                    <!--    <div style="font-size:10px;text-align:left;">2401 4th Ave<br>-->
+                    <!--    Suite 600<br>-->
+                    <!--    Seattle, WA 98199</div>-->
+                    <!--</button>-->
                 </div>
             </div>
             
@@ -76,7 +141,7 @@
                 <div class="bubble-out-triangle">
                 </div>
                 <div class="bubble-content bubble-out-content">
-                    Incoming bubble here where i have lots of text, so i need to make the font size bigger to truly rep
+                    2401 4th Ave, Suite 600, Seattle, WA 98121
                 </div>
             </div>
             
@@ -84,12 +149,108 @@
                 <div class="bubble-in-triangle">
                 </div>
                 <div class="bubble-content bubble-in-content">
-                    Incoming bubble here where i have lots of text, so i need to make the font size bigger to truly rep
+                Ok, we can deliver there. What would you like?
+                <!--<button class="btn btn-default" style="xfloat:left;">Menu</button>-->
+                <img src="jimmyjohn-menu.png" style="width:280px;">
+                </div>
+            </div>
+            
+            <div class="bubble-out">
+                <div class="bubble-out-triangle">
+                </div>
+                <div class="bubble-content bubble-out-content">
+                    3 #5 Vito, 1 J.J.B.L.T, 1 #1 Pepe, 3 BBQ Jimmy Chips, 
+                    2 Salt & Vineger Jimmy Chips, 4 Pickle (Whole),
+                    1 Chocolate Chunk Cookie
                 </div>
             </div>
 
+            <div class="bubble-in">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content" style="padding:0;">
+                
+                <p style="padding:10px;">
+                    [Order verify / receipt ]
+                    <ul>
+                    <li>3 #5 Vito, 1 J.J.B.L.T - $15.43</li>
+                    <li>1 #1 Pepe, 3 BBQ Jimmy Chips - $6.33</li>
+                    <li>2 Salt & Vineger Jimmy Chips - $2.54</li>
+                    <li>4 Pickle (Whole) - $1.75</li>
+                    <li>1 Chocolate Chunk Cookie - $3.56</li>
+                    </ul>
+                    Total: $23.23
+                </p>
+                
+                
+                </div>
+            </div>
+            
+            <div class="bubble-in">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content" style="padding:0;">
+                
+                <p style="padding:10px;">
+                    We will get that delivered to you in 15 minutes. You can watch the delivery 
+                status on the map below or in your Android notification pulldown.
+                </p>
+                
+                <iframe
+                      width="100%"
+                      height="80px"
+                      frameborder="0" style="border:0; margin-bottom:-6px;"
+                      src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="bubble-in">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content">
+                <img src="jimmyjohn-jeff.png" style="width:60px;float: left;margin-right: 10px;">
+                    Jeff just left the store and is bike delivering your order. Should be there 
+                    in 10 minutes.
+                </div>
+            </div>
+            
+            <div class="bubble-in">
+                <div class="bubble-in-triangle">
+                </div>
+                <div class="bubble-content bubble-in-content">
+                <img src="jimmyjohn-jeff.png" style="width:60px;float: left;margin-right: 10px;">
+                Hi John, I'm in the lobby of the building but can't get up the elevators 
+                because they're locked.
+                </div>
+            </div>
+            
+            <div class="bubble-out">
+                <div class="bubble-out-triangle">
+                </div>
+                <div class="bubble-content bubble-out-content">
+                    Oh, sorry, I'll come down right now.
+                </div>
+            </div>
+            
         </div>
         <div class="panel-footer">
+            
+            <!-- Jimmy John -->
+            <div class="banner" style="border-bottom:1px solid #ddd; ">
+                <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <!--<div class="jimmyjohn-sidebanner"></div>-->
+                <div class="jimmyjohn-wrapper" style="padding:14px;">
+                    <p style="padding: 0;">Hi John, your last order was 1 #5 Vito, 1 
+                    Jalapeno Jimmy Chips, and 1 Jumbo Kosher Dill Pickle.</p>
+                    <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
+                    <div style="padding: 0;">
+                        <button class="btn btn-default">Delivery</button>
+                        <button class="btn btn-default">Pickup</button>
+                        <button class="btn btn-default">Repeat Last Order</button>
+                    </div>
+                </div>
+            </div>
             
             <table><tr valign="middle">
                 <td>
@@ -102,12 +263,12 @@
                 </td>
                 <td>
                     <div class="smiley">
-                        <img src="smiley.png" style="width:30px;">    
+                        <img src="smiley.png" style="width:24px;">    
                     </div>
                 </td>
                 <td>
                     <div class="graycircle microphone">
-                        <img src="mic.png" style="width:23px;">
+                        <img src="mic.png" style="width:18px;">
                     </div>
                 </td>
             </tr></table>

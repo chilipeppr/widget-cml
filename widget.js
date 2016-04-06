@@ -68,7 +68,10 @@ cprequire_test(["inline:com-chilipeppr-widget-cml"], function(myWidget) {
 
     // init my widget
     myWidget.init();
-    $('#' + myWidget.id).css('margin', '20px');
+    // $('#' + myWidget.id).css('margin', '20px');
+    $('body').css('padding', '20px');
+    $('body').css('height', '100%');
+    $('html').css('height', '100%');
     $('title').html(myWidget.name);
 
 } /*end_test*/ );
