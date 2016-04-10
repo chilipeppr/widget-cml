@@ -1,4 +1,4 @@
-/* global requirejs cprequire cpdefine chilipeppr THREE */
+/* global requirejs cprequire cpdefine chilipeppr THREE $*/
 // Defining the globals above helps Cloud9 not show warnings for those variables
 
 // ChiliPeppr Widget/Element Javascript
@@ -136,11 +136,109 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
         init: function() {
             console.log("I am being initted. Thanks.");
 
+            var that = this;
+            
             this.setupUiFromLocalStorage();
             this.btnSetup();
             this.forkSetup();
+            
+            // attach events to buttons
+            // buttons should be named btn-s1 and bubbles should be named bubble-s1
+            // we will create 20 bubble events
+            for (var i = 1; i < 20; i++) {
+                $('#' + this.id + ' .btn-s' + i).click('#' + this.id + ' .bubble-s' + i, this.slideIt);
+            }
+            
+            // transition from generic phone to branded header
+            $('.btn-name').click(function() {
+                $('.top-phone-generic').addClass('hidden');
+                $('.top-phone-jimmyjohn').removeClass('hidden');
+            });
+            $('.btn-logo').click(function() {
+                $('.logo-jimmyjohn').removeClass("hidden");
+            });
+            
+            $('.btn-lock').click(function() {
+                $('.lockicon').removeClass("hidden");
+            });
+            
+            // topbar
+            $('.topbar').click(this.showNotificationMenu.bind(this));
+            $('.notify-mainmenu').click(this.hideNotificationMenu.bind(this));
+            
+            // delivery btn
+            $('.btn-delivery').click('.bubble-s2', this.slideIt);
+            
+            // bind address picker
+            $('#' + this.id + ' .btn-addrpicker').click(this.openAddrPicker.bind(this));
+            $('#' + this.id + ' .dlg-addrpicker .close').click(this.closeAddrPicker.bind(this));
+            $('#' + this.id + ' .btn-addr-home').click(function() {
+                that.closeAddrPicker();
+                that.slideIt({data:'#' + that.id + ' .bubble-s4'});
+            });
+            
+            // credit card picker
+            $('#' + this.id + ' .btn-ccardpicker').click(this.openCcardPicker.bind(this));
+            $('#' + this.id + ' .dlg-ccardpicker .close').click(this.closeCcardPicker.bind(this));
+            // $('#' + this.id + ' .btn-ccard-visa').click(this.closeCcardPicker.bind(this));
+            $('#' + this.id + ' .btn-ccard-visa').click(function() {
+                that.closeCcardPicker();
+                that.slideIt({data:'#' + that.id + ' .bubble-s10'});
+            });
+            $('#' + this.id + ' .btn-ccard-amex').click(this.closeCcardPicker.bind(this));
+            
+            // for debug need to see dialog
+            //this.openAddrPicker();
 
             console.log("I am done being initted.");
+        },
+        showNotificationMenu: function() {
+            console.log("showNotificationMenu");
+            $('#' + this.id + " .android-pulldown").removeClass("hidden");
+        },
+        hideNotificationMenu: function() {
+            $('#' + this.id + " .notify-mainmenu").addClass("slideoutanim");
+            $('#' + this.id + " .notify-jimmyjohn").addClass("slideoutanim2");
+            var that = this;
+            setTimeout(function() {
+                $('#' + that.id + " .notify-mainmenu").addClass("hidden");
+                $('#' + that.id + " .notify-jimmyjohn").addClass("hidden");
+                $('#' + that.id + " .android-pulldown").addClass("hidden");
+                setTimeout(function() {
+                    $('#' + that.id + " .notify-mainmenu").removeClass("slideoutanim");
+                    $('#' + that.id + " .notify-jimmyjohn").removeClass("slideoutanim2");
+                    $('#' + that.id + " .notify-mainmenu").removeClass("hidden");
+                    $('#' + that.id + " .notify-jimmyjohn").removeClass("hidden");
+                }, 1000);
+            }, 1000);
+        },
+        openAddrPicker: function() {
+            console.log("openAddrPicker");
+            $('#' + this.id + " .dlg-addrpicker").removeClass("hidden"); 
+        },
+        closeAddrPicker: function() {
+            $('#' + this.id + " .dlg-addrpicker").addClass("hidden"); 
+        },
+        openCcardPicker: function() {
+            $('#' + this.id + " .dlg-ccardpicker").removeClass("hidden"); 
+        },
+        closeCcardPicker: function() {
+            $('#' + this.id + " .dlg-ccardpicker").addClass("hidden"); 
+        },
+        /**
+         * Pass in a class name and we'll hide it and then show it again so the anim applies.
+         */
+        slideIt: function(data) {
+            console.log("slideIt. data:", className);
+            var className = data.data;
+            console.log("slideIt. className:", className);
+            $(className).addClass('hidden');
+            setTimeout(function() {
+                console.log("unhiding. className:", className);
+                $(className).removeClass('hidden');
+                var d = $(className).parent();
+                d.scrollTop(d.prop("scrollHeight"));
+            }, 200);
         },
         /**
          * Call this method from init to setup all the buttons when this widget
