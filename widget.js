@@ -149,9 +149,19 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
                 $('#' + this.id + ' .btn-s' + i).click('#' + this.id + ' .bubble-s' + i, this.slideIt);
             }
             
+            // CML composer and send button
+            $('.btn-sendhybrid').click(this.mimicRecvCml.bind(this));
+            $('.btn-clearbubbles').click(this.clearBubbles.bind(this));
+            $('.menu-ccard').click(this.onCmlTemplateCcard.bind(this));
+            $('.menu-addr').click(this.onCmlTemplateAddr.bind(this));
+            $('.menu-youtube').click(this.onCmlTemplateYoutube.bind(this));
+            $('.menu-hello').click(this.onCmlTemplateHello.bind(this));
+            $('.menu-animgif').click(this.onCmlTemplateAnimgif.bind(this));
+
+            
             // transition from generic phone to branded header
             $('.btn-name').click(function() {
-                $('.top-phone-generic').addClass('hidden');
+                $('.cml-text-interface .top-phone-generic').addClass('hidden');
                 $('.top-phone-jimmyjohn').removeClass('hidden');
             });
             $('.btn-logo').click(function() {
@@ -166,6 +176,16 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
             $('.topbar').click(this.showNotificationMenu.bind(this));
             $('.notify-mainmenu').click(this.hideNotificationMenu.bind(this));
             
+            // jimmyjohn usecase
+            $('.btn-usecase-jimmyjohn').click(function() {
+                $('.toolbar-usecase-jimmyjohn').toggleClass('hidden'); 
+            });
+            
+            // amex usecase
+            $('.btn-usecase-amex').click(function() {
+                $('.toolbar-usecase-amex').toggleClass('hidden'); 
+            });
+            
             // delivery btn
             $('.btn-delivery').click('.bubble-s2', this.slideIt);
             
@@ -173,8 +193,13 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
             $('#' + this.id + ' .btn-addrpicker').click(this.openAddrPicker.bind(this));
             $('#' + this.id + ' .dlg-addrpicker .close').click(this.closeAddrPicker.bind(this));
             $('#' + this.id + ' .btn-addr-home').click(function() {
-                that.closeAddrPicker();
-                that.slideIt({data:'#' + that.id + ' .bubble-s4'});
+                if (that.isInGenericMode) {
+                    that.closeAddrPicker();
+                    that.isInGenericMode = false;
+                } else {
+                    that.closeAddrPicker();
+                    that.slideIt({data:'#' + that.id + ' .bubble-s4'});
+                }
             });
             
             // credit card picker
@@ -182,15 +207,233 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
             $('#' + this.id + ' .dlg-ccardpicker .close').click(this.closeCcardPicker.bind(this));
             // $('#' + this.id + ' .btn-ccard-visa').click(this.closeCcardPicker.bind(this));
             $('#' + this.id + ' .btn-ccard-visa').click(function() {
-                that.closeCcardPicker();
-                that.slideIt({data:'#' + that.id + ' .bubble-s10'});
+                if (that.isInGenericMode) {
+                    that.closeCcardPicker();
+                    $('.btn-ccard-default').text("Visa - 9010");
+                    that.changeComposeBox("Visa 4000 1234 5678 9010 Exp: 12/20");
+                    that.isInGenericMode = false;
+                } else {
+                    that.closeCcardPicker();
+                    that.slideIt({data:'#' + that.id + ' .bubble-s10'});
+                }
             });
-            $('#' + this.id + ' .btn-ccard-amex').click(this.closeCcardPicker.bind(this));
+            $('#' + this.id + ' .btn-ccard-amex').click(function() {
+                if (that.isInGenericMode) {
+                    that.closeCcardPicker();
+                    $('.btn-ccard-default').text("Amex - 21001");
+                    that.changeComposeBox("American Express 3759 876543 21001 Exp: 04/22");
+                    that.isInGenericMode = false;
+                } else {
+                    that.closeCcardPicker();
+                    // that.slideIt({data:'#' + that.id + ' .bubble-s10'});
+                }
+            });
+                           
+            // compose box
+            $('.compose-box').keypress(this.onComposeKeypress.bind(this));
+            $('.compose-box').keyup(this.onComposeKeyup.bind(this));
+            $('.cml-text-interface .compose-box').keyup(this.onComposeCmlKeyup.bind(this));
+            $('.generic-text-interface .compose-box').keyup(this.onComposeGenericKeyup.bind(this));
+            $('.send-arrow').click(this.onClickSendButton.bind(this));
             
             // for debug need to see dialog
             //this.openAddrPicker();
 
             console.log("I am done being initted.");
+        },
+        changeComposeBox: function(txt) {
+            $('.compose-box').val(txt);
+            this.onComposeKeyup();
+        },
+        onComposeKeypress: function(event) {
+            console.log("keypress")
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+        	if (keycode == '13'){
+        // 		console.log('You pressed a "enter" key in textbox');
+        		var text = $('.compose-box').val();
+        		this.mimicSendText(text);
+        		$('.compose-box').val("");
+    		}
+        	
+        },
+        onComposeCmlKeyup: function(event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            // console.log("cml keyup. event:", event, "keycode:", keycode);
+            $('.generic-text-interface .compose-box').val($('.cml-text-interface .compose-box').val());
+        },
+        onComposeGenericKeyup: function(event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            // console.log("generic keyup. event:", event, "keycode:", keycode);
+            $('.cml-text-interface .compose-box').val($('.generic-text-interface .compose-box').val());
+        },
+        onComposeKeyup: function(event) {
+            // see if empty and if so then put mic back
+    	    if ($('.compose-box').val().length > 0) {
+        	    this.showSendArrow();
+    	    } else {
+    	        this.showMic();
+    	    }
+        },
+        showSendArrow: function() {
+            // put send arrow in place of mic
+    		$('.microphone').addClass("hidden");
+    		$('.send-arrow').removeClass("hidden");
+        },
+        showMic: function() {
+            // put mic back from send arrow
+    		$('.microphone').removeClass("hidden");
+    		$('.send-arrow').addClass("hidden");
+        },
+        onClickSendButton: function() {
+            var text = $('.compose-box').val();
+    		this.mimicSendText(text);
+    		$('.compose-box').val("");
+    		
+    		this.showMic();
+        },
+        mimicSendText: function(text) {
+            console.log("sendCml.");
+            
+            // get bubble template
+            var bubbleOutTemplateEl = $('.bubble-template.bubble-out').clone();
+            bubbleOutTemplateEl.removeClass('bubble-template');
+            bubbleOutTemplateEl.removeClass('hidden');
+            bubbleOutTemplateEl.addClass("bubble-dynamicallygenerated");
+            
+            // insert bubble in text region
+            var bubbleTextEl = bubbleOutTemplateEl.clone();
+            var bcEl = bubbleTextEl.find('.bubble-content');
+            bcEl.text(text);
+            $('.generic-text-interface .panel-body').append(bubbleTextEl);
+            
+            // insert bubble in CML region
+            var bubbleTextEl2 = bubbleTextEl.clone();
+            $('.cml-text-interface .panel-body').append(bubbleTextEl2);
+        },
+        onCmlTemplateYoutube: function() {
+            var tmplt = $('.cml-template-youtube').clone();
+            tmplt.removeClass("hidden");
+            tmplt.removeClass("cml-template-ccard");
+            $('.cml-text').val(tmplt[0].outerHTML);
+        },
+        onCmlTemplateAddr: function() {
+            var tmplt = $('.cml-template-addr').clone();
+            tmplt.removeClass("hidden");
+            tmplt.removeClass("cml-template-ccard");
+            $('.cml-text').val(tmplt[0].outerHTML);
+        },
+        onCmlTemplateCcard: function() {
+            var tmpltCcard = $('.cml-template-ccard').clone();
+            tmpltCcard.removeClass("hidden");
+            tmpltCcard.removeClass("cml-template-ccard");
+            $('.cml-text').val(tmpltCcard[0].outerHTML);
+        },
+        onCmlTemplateHello: function() {
+            var tmplt = $('.cml-template-hello').clone();
+            tmplt.removeClass("hidden");
+            tmplt.removeClass("cml-template-hello");
+            $('.cml-text').val(tmplt[0].outerHTML);
+        },
+        onCmlTemplateAnimgif: function() {
+            var tmplt = $('.cml-template-animgif').clone();
+            tmplt.removeClass("hidden");
+            tmplt.removeClass("cml-template-hello");
+            $('.cml-text').val(tmplt[0].outerHTML);
+            
+        },
+        mimicRecvCml: function(altText) {
+            console.log("sendCml.");
+            
+            // take the text and parse it
+            var cmltext = $('.cml-text').val();
+            console.log("cmltext:", cmltext);
+            var cml = $(cmltext);
+            console.log("cml:", cml);
+            
+            // deal with fallback
+            var fallback = cml.find('cml-fallback');
+            console.log("fallback:", fallback);
+            var fallbackTxt = fallback.text();
+            
+            // delete fallback element
+            fallback.remove();
+            
+            // now extract HTML
+            var html = cml.html();
+            
+            // get bubble template
+            var bubbleInTemplateEl = $('.bubble-template.bubble-in').clone();
+            bubbleInTemplateEl.removeClass('bubble-template');
+            bubbleInTemplateEl.removeClass('hidden');
+            bubbleInTemplateEl.addClass("bubble-dynamicallygenerated");
+            
+            // insert bubble in text region
+            var bubbleTextEl = bubbleInTemplateEl.clone();
+            var bcEl = bubbleTextEl.find('.bubble-content');
+            bcEl.text(fallbackTxt);
+            $('.generic-text-interface .panel-body').append(bubbleTextEl);
+            
+            // insert bubble in CML region
+            var bubbleHtmlEl = bubbleInTemplateEl.clone();
+            var bcEl = bubbleHtmlEl.find('.bubble-content');
+            bcEl.html(html);
+            
+            // see if there is a style tag in cml
+            var cmlStyle = cml.attr('style');
+            console.log("cmlStyle:", cmlStyle);
+            bcEl.attr('style', cmlStyle);
+            
+            // see if there is a credit card picker in CML
+            var ccardEl = bcEl.find('cml-creditcard');
+            if (ccardEl.length > 0) {
+                console.log("there is a credit card picker wanted");
+                // find template
+                var ccTmplt = $('.template-ccardpicker').clone();
+                ccTmplt.removeClass('hidden');
+                ccTmplt.removeClass('template-ccardpicker');
+                ccardEl.replaceWith(ccTmplt);
+                bcEl.find('.btn-ccardpicker').click(this.openCcardPickerGeneric.bind(this));
+                var that = this;
+                bcEl.find('.btn-ccard-default').click(function(event) {
+                    console.log("default ccard got clicked. event:", event);
+                    var el = $(event.currentTarget);
+                    if (el.text().match(/visa/i)) {
+                        that.changeComposeBox("Visa 4000 1234 5678 9010 Exp: 12/20");
+                    } else {
+                        that.changeComposeBox("American Express 3759 876543 21001 Exp: 04/22");
+                    }
+                });
+            }
+            
+            // see if there is an address picker in CML
+            var ccardEl = bcEl.find('cml-address');
+            if (ccardEl.length > 0) {
+                console.log("there is a credit card picker wanted");
+                // find template
+                var ccTmplt = $('.template-addrpicker').clone();
+                ccTmplt.removeClass('hidden');
+                ccTmplt.removeClass('template-addrpicker');
+                ccardEl.replaceWith(ccTmplt);
+                bcEl.find('.btn-addrpicker').click(this.openAddrPickerGeneric.bind(this));
+                var that = this;
+                bcEl.find('.btn-addr-default').click(function(event) {
+                    console.log("default addr got clicked. event:", event);
+                    var el = $(event.currentTarget);
+                    if (el.text().match(/home/i)) {
+                        that.changeComposeBox("2917 W Eaton St, Seattle, WA 98199");
+                    } else {
+                        that.changeComposeBox("2401 4th Ave, Suite 600, Seattle, WA 98121");
+                    }
+                });
+            }
+            
+            $('.cml-text-interface .panel-body').append(bubbleHtmlEl);
+            
+            
+        },
+        clearBubbles: function() {
+            $('.generic-text-interface .panel-body .bubble-dynamicallygenerated').remove();
+            $('.cml-text-interface .panel-body .bubble-dynamicallygenerated').remove();
         },
         showNotificationMenu: function() {
             console.log("showNotificationMenu");
@@ -216,10 +459,19 @@ cpdefine("inline:com-chilipeppr-widget-cml", ["chilipeppr_ready", /* other depen
             console.log("openAddrPicker");
             $('#' + this.id + " .dlg-addrpicker").removeClass("hidden"); 
         },
+        openAddrPickerGeneric: function() {
+            this.isInGenericMode = true;
+            console.log("openAddrPicker");
+            $('#' + this.id + " .dlg-addrpicker").removeClass("hidden"); 
+        },
         closeAddrPicker: function() {
             $('#' + this.id + " .dlg-addrpicker").addClass("hidden"); 
         },
         openCcardPicker: function() {
+            $('#' + this.id + " .dlg-ccardpicker").removeClass("hidden"); 
+        },
+        openCcardPickerGeneric: function() {
+            this.isInGenericMode = true;
             $('#' + this.id + " .dlg-ccardpicker").removeClass("hidden"); 
         },
         closeCcardPicker: function() {

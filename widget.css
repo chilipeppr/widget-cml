@@ -5,6 +5,9 @@
     height:100%;
     position:relative;
 }
+.inteface-title {
+    color:white;
+}
 .android-pulldown {
     position:absolute;
     top:0;
@@ -51,7 +54,7 @@
 }
 .dlg-full {
     position:absolute;
-    top:30px;
+    top:80px;
     bottom:10px;
     left:10px;
     right:10px;
@@ -96,6 +99,9 @@
 .top-phone-jimmyjohn {
     background-color: #bbb;
 }
+.top-phone-amex {
+    background-color: #aaa;
+}
 
 .panel-body {
     background-color: #f0f0f0;
@@ -116,6 +122,10 @@
     background-color:white;
     padding-top:8px;
     padding-bottom:8px;
+}
+.bubble-content p {
+    margin:0;
+    padding:16px;
 }
 .bubble-in {
     margin-top:10px;
@@ -195,7 +205,8 @@
     margin-left:8px;
     font-size:40px;
     font-weight: bold;
-    line-height: 30px;
+    /*line-height: 30px;*/
+    line-height: 40px;
     text-align: center;
     color:#4c4c4c;
 }
@@ -203,6 +214,12 @@
     margin-left:16px;
 }
 .microphone {
+    margin-left:10px;
+    margin-right:16px;
+    text-align: center;
+    line-height: 38px;
+}
+.send-arrow {
     margin-left:10px;
     margin-right:16px;
     text-align: center;

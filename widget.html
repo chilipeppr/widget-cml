@@ -37,297 +37,138 @@
     
     <div id="com-chilipeppr-widget-cml" class="xpanel xpanel-default">
     
-        <table><tr valign="top"><td>
+        <table><tr valign="top"><td style="width:300px;color:white;">
             
+            <!-- start left button col area -->
+            <button class="btn btn-default btn-usecase-amex">Amex</button>
     
-        <div class="toolbar-usecase" style="padding-bottom:20px;">
-            <button class="btn btn-default">Jimmy Johns</button>
-            <button class="btn btn-default btn-name">Name</button>
-            <button class="btn btn-default btn-logo">Logo</button>
-            <button class="btn btn-default btn-lock">Lock</button>
-            <button class="btn btn-default btn-s1">S1</button>
-            <button class="btn btn-default btn-s2">S2</button>
-            <button class="btn btn-default btn-s3">S3</button>
-            <button class="btn btn-default btn-s4">S4</button>
-            <button class="btn btn-default btn-s5">S5</button>
-            <button class="btn btn-default btn-s6">S6</button>
-            <button class="btn btn-default btn-s7">S7</button>
-            <button class="btn btn-default btn-s8">S8</button>
-            <button class="btn btn-default btn-s9">S9</button>
-            <button class="btn btn-default btn-s10">S10</button>
-            <button class="btn btn-default btn-s11">S11</button>
-            <button class="btn btn-default btn-s12">S12</button>
-            <button class="btn btn-default btn-s13">S13</button>
-            <button class="btn btn-default btn-s14">S14</button>
-            <!--<button class="btn btn-default btn-s15">S15</button>-->
-            <!--<button class="btn btn-default btn-s16">S16</button>-->
-            <!--<button class="btn btn-default btn-s17">S17</button>-->
-        </div>
-        
-        </td>
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        <td style="position:relative;">
-            
-        <!-- Overlay for placement -->
-        <div class="overlay-placement">
-            <!--<img src="screen.png">-->
-        </div>
-        
-        
-        <!-- Android Pulldown -->
-        <div class="android-pulldown hidden">
-            <img class="notify-mainmenu" src="notify-top.png" style="width:100%">
-            <div style="height:283px"></div>
-            <div class="notify-jimmyjohn">
-                <div class="notify-wrapper">
-                    <table class="notify-table">
-                        <tr valign="middle">
-                            <td>
-                                <img src="jimmyjohn-logo.png" style="width:60px;padding-right:10px;">
-                            </td>
-                            <td>
-                                <p style="margin-bottom:0;">Your order is on its way...</p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <iframe
-                  width="100%"
-                  height="120px"
-                  frameborder="0" style="border:0; margin-bottom:-6px;"
-                  src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
-                </iframe>
-                <div class="notify-wrapper">
-                    <p style="color:#499ebd;text-align:right;margin:0 10px 0 0;">TEXT STORE</p>
-                </div>
-            </div>
-            <p class="pull-left" style="color:white;text-align:right;margin:5px 10px 0 7px;">NOTIFICATION SETTINGS</p>
-            <p style="color:white;text-align:right;margin:5px 7px 0 0;">CLEAR</p>
-        </div>
-        
-        <!-- credit card picker -->
-        <div class="dlg-ccardpicker dlg-full hidden" xstyle="position:absolute;">
-            
-            <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Credit Card Picker</h4>
-              </div>
-              <div class="modal-body">
-                  
-                  <div class="btn-group-vertical" role="group" aria-label="...">
-                  <button type="button" class="btn btn-default btn-ccard-visa">
-                      <table style="width:100%;align:left;">
-                        <tr valign="top" align="left">
-                            <td style="width:40%;"><img src="ccard-visa.png" style="width:95%;"></td>
-                            <td style="width:60%;"><b>Personal - Visa</b><br>
-                            4000 1234 5678 9010<br>
-                            Exp: 12/20</td>
-                        </tr>
-                    </table>
-                  </button>
-                  <button type="button" class="btn btn-default btn-ccard-amex">
-                      <table style="width:100%;align:left;">
-                        <tr valign="top" align="left">
-                            <td style="width:40%;"><img src="ccard-amex.png" style="width:95%;"></td>
-                            <td style="width:60%;"><b>Work - American Express Gold</b><br>
-                            3759 876543 21001<br>
-                            Exp: 04/22</td>
-                        </tr>
-                    </table>
-                  </button>
-                  <button type="button" class="btn btn-primary">Add New Card...</button>
-                  </div>
-                
-               
-                
-              </div>
-              <div class="modal-footer hidden">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->   
-            
-        </div>
-        
-        <!-- address picker -->
-        <div class="dlg-addrpicker dlg-full hidden" xstyle="position:absolute;">
-            
-            <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Address Picker</h4>
-              </div>
-              <div class="modal-body">
-                  
-                  <div class="btn-group-vertical" role="group" aria-label="...">
-                  <button type="button" class="btn btn-default btn-addr-home">
-                      <table style="width:100%;align:left;">
-                        <tr valign="top" align="left">
-                            <td style="width:40%;"><img src="addr-home.png" style="width:95%;"></td>
-                            <td style="width:60%;"><b>Home</b><br>
-                            2917 W Eaton St<br>
-                            Seattle, WA 98199</td>
-                        </tr>
-                    </table>
-                  </button>
-                  <button type="button" class="btn btn-default btn-addr-work">
-                      <table style="width:100%;align:left;">
-                        <tr valign="top" align="left">
-                            <td style="width:40%;"><img src="addr-work.png" style="width:95%;"></td>
-                            <td style="width:60%;"><b>Work</b><br>
-                            2401 4th Ave<br>
-                            Suite 600<br>
-                            Seattle, WA 98121
-                            </td>
-                        </tr>
-                    </table>
-                  </button>
-                  <button type="button" class="btn btn-default btn-addr-boise">
-                      <table style="width:100%;align:left;">
-                        <tr valign="top" align="left">
-                            <td style="width:40%;"><img src="addr-boise.png" style="width:95%;"></td>
-                            <td style="width:60%;"><b>Boise Office</b><br>
-                            123 Main St<br>
-                            Suite 200<br>
-                            Boise, ID 83702
-                            </td>
-                        </tr>
-                    </table>
-                  </button>
-                  <button type="button" class="btn btn-primary">Add New Address...</button>
-                  </div>
-                
-               
-                
-              </div>
-              <div class="modal-footer hidden">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->   
-            
-        </div>
-        
-
-        <div class="panel-heading">
-            
-            <div class="topbar">
-                <img src="topbar-black.png" style="width:100%">
-            </div>
-            
-            <!-- Generic -->
-            <table class="top-phone-region top-phone-generic xhidden" style="height:70px;">
-            <tr valign="middle">
-                <td>
-                    <img class="arrow" src="arrow.png">
-                </td>
-                <td class="col-compose">
-                    <div class="phone phone-number">
-                        (206) 434-9499
-                    </div>
-                    <div class="phone phone-desc">
-                        Mobile
-                    </div>
-                </td>
-                <td>
-                    <img class="phone-img" src="phone.png">
-                </td>
-                <td>
-                    <img class="dots" src="dots.png">
-                </td>
-            </tr>
-            </table>
-            
-            <!-- Jimmy John -->
-            <table class="top-phone-region top-phone-jimmyjohn hidden" style="height:70px;">
-            <tr valign="middle">
-                <td>
-                    <img class="arrow" src="arrow.png" style="margin-right:10px;">
-                </td>
-                <td>
-                    <img src="lockicon-inverted.png" class="hidden lockicon" style="xmargin-left:10px;height:10px;margin-bottom:30px;">
-                </td>
-                <td>
-                    <img src="jimmyjohn-logo.png" class="hidden logo-jimmyjohn" style="margin-left:2px;height:40px;">
-                </td>
-                <td class="col-compose" style="xtext-align:center;color:white;">
-                    <div style="xline-height:12px;font-size:18px;">South Lake Union Store</div>
-                    <div style="line-height:1opx;font-size:12px;">(206) 434-9499</div>
-                </td>
-                <td>
-                    <img class="phone-img" src="phone.png">
-                </td>
-                <td>
-                    <img class="dots" src="dots.png">
-                </td>
-            </tr>
-            </table>
-
-        </div>
-        <div class="panel-body">
-            
-
-            
-
-            <div class="bubble-in hidden bubble-s1">
-                <div class="bubble-in-triangle">
-                </div>
-                <div class="bubble-content bubble-in-content" xstyle="padding:0;">
-                    <!--<p>Hi John</p>-->
-                    <p style="padding: 0;">Hi John, your last order was 1 #5 Vito, 1 
-                    Jalapeno Jimmy Chips, and 1 Jumbo Kosher Dill Pickle.</p>
-                    <div style="padding: 0 0 10px 0;">
-                        <button class="btn btn-primary">Repeat Last Order</button>
-                        <button class="btn btn-primary btn-delivery">Delivery</button>
-                        <button class="btn btn-primary">Pickup</button>
-                    </div>
-                    
-                    <p>You have 6 stars on your punch card. 3 more stars and you get a
-                    free sandwich.</p>
-                    <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
-                    <div style="font-size:24px;position:relative;">
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                        <span class="glyphicon glyphicon-star-empty"></span>
-                        
-                        <span style="font-size:12px;position:absolute;transform:translate(0,6px) rotate(-45deg);">Free</span>
-                        
-                    </div>
-
+            <div class="toolbar-usecase" style="padding-bottom:20px;">
+                <button class="btn btn-default btn-usecase-jimmyjohn">Jimmy Johns</button>
+                <div class="toolbar-usecase-jimmyjohn hidden">
+                    <button class="btn btn-default btn-name">Name</button>
+                    <button class="btn btn-default btn-logo">Logo</button>
+                    <button class="btn btn-default btn-lock">Lock</button>
+                    <button class="btn btn-default btn-s1">S1</button>
+                    <button class="btn btn-default btn-s2">S2</button>
+                    <button class="btn btn-default btn-s3">S3</button>
+                    <button class="btn btn-default btn-s4">S4</button>
+                    <button class="btn btn-default btn-s5">S5</button>
+                    <button class="btn btn-default btn-s6">S6</button>
+                    <button class="btn btn-default btn-s7">S7</button>
+                    <button class="btn btn-default btn-s8">S8</button>
+                    <button class="btn btn-default btn-s9">S9</button>
+                    <button class="btn btn-default btn-s10">S10</button>
+                    <button class="btn btn-default btn-s11">S11</button>
+                    <button class="btn btn-default btn-s12">S12</button>
+                    <button class="btn btn-default btn-s13">S13</button>
+                    <button class="btn btn-default btn-s14">S14</button>
                 </div>
             </div>
             
-           
-            
-
-            <div class="bubble-out hidden bubble-s2">
-                <div class="bubble-out-triangle">
-                </div>
-                <div class="bubble-content bubble-out-content">
-                    Delivery. 
-                </div>
+            <div class="compose-nameimage">
+                
+                Response to CML Name/Image Dip
+                <textarea class="form-control" style="height:80px;">
+<cml>
+    <cml-name>South Lake Union Store</cml-name>
+    <cml-image src="https://preview.c9users.io/chilipeppr/widget-cml/jimmyjohn-logo.png" />
+    <cml-style background-color="#bbb" color="white"/>
+</cml>
+</textarea>
+                
             </div>
-   
- 
-            <div class="bubble-in hidden bubble-s3">
-                <div class="bubble-in-triangle">
+            
+            <div class="compose-nameimage">
+                
+                Response to CML Verified Icon
+                <textarea class="form-control" style="height:80px;">
+<cml>
+    <cml-cert 
+    issuedto="American Express, Inc." 
+    issuedby="Zipwhip, Inc. Certificate Authority"
+    validfrom="1/1/2016 00:00:00 UTC" 
+    validto="12/31/2017 23:59:59 UTC" 
+    version="v1" 
+    serialnumber="01 00 00 01 22 7f 24 4d" 
+    signature-algorithm="sha1RSA"
+    public-key-type="RSA (2048 bits)"
+    public-key="30 82 01 0a 02 82 01 01 00 ca f4 b3 b2 c5 be 4c af 53 53 75 27 db 2e a9 81 95 d9 7a d8 00 48 79 7d df e7 8f 20 0d 93 7d a5 c2 f4 9f c7 b2 53 76 82 30 f6 3f 31 68 48 62 04 06 1b a6 72 ae c7 da b2 ce e0 e8 35 af af e1 23 90 c5 b1 f5 4f f7 76 5f ed 12 34 fc c4 60 6f a5 ae 83 ea 4e d4 c7 ab 9e 76 d3 33 33 de e8 2b 69 b5 13 3e 35 50 c9 dd e0 92 33 9e 0a fc 0d 23 62 a3 2c 83 fd 8e 83 48 1e 9a ef f2 8a 20 32 3f 88 81 70 11 8a fe e9 32 93 97 9b 85 b3 2e 98 7d 2e 1d e7 d0 5e ee 6f c4 03 d3 2e ef a8 4d f9 cd 5f bd 16 6d b1 b1 2b de dd 38 94 92 27 ef 13 6d ea ad c5 e0 55 9e 66 80 f6 d3 50 ec 74 1f d6 1c f4 49 1f cc c5 85 7c fa 72 f5 b2 1a c3 41 b7 05 67 c1 46 65 e7 11 f6 6c 69 45 71 4e f4 88 70 09 50 51 b1 56 89 22 fc 37 25 c3 a7 e9 07 da 53 6c 5c 89 52 4f d0 ce a0 ce 52 01 ea 47 5a d9 d5 8a d9 02 03 01 00 01"
+    public-key-pair="05 00"
+    authority-key-identifier="KeyID=90 af 6a 3a 94 5a 0b d8 90 ea 12 56 73 df 43 b4 3a 28 da e7"
+    subject-key-identifier="04 a8 5a b9 9d 37 b5 ab 9b 9b 3e 55 30 01 e4 e1 2d 8a c9 b2"
+    />
+</cml>
+</textarea>
+                
+            </div>
+            
+            <div class="compose-hybrid" style="padding-top:6px;">
+                <p class="pull-left" style="margin:2px 0 0 0;">Compose CML Message</p>
+                <div class="dropdown pull-right">
+                  <button style="background-color:black;border:0;" id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Templates
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dLabel">
+                    <li><a href="#" class="menu-hello">Hello World</a></li>
+                    <li><a href="#" class="menu-ccard">Credit Card Picker</a></li>
+                    <li><a href="#" class="menu-addr">Address Picker</a></li>
+                    <li><a href="#" class="menu-youtube">Youtube</a></li>
+                    <li><a href="#" class="menu-animgif">Animated Gif</a></li>
+                  </ul>
                 </div>
-                <div class="bubble-content bubble-in-content" style="padding:0;">
-                    <p style="padding:10px;">
-                    Hi John, sure, we can get that delivery order out to you. What delivery 
-                    address would you like it delivered to?
-                    </p>
-                    
+                
+                <textarea class="form-control cml-text" style="height:200px;">
+               </textarea>
+
+<!-- cml template. credit card. -->
+<cml style="padding:0;" class="hidden cml-template-ccard">
+    <p>Which credit card would you like the order charged to?</p>
+    <cml-creditcard></cml-creditcard>
+    <cml-fallback>
+        Can you please send us your credit card you'd like this order placed on.
+    </cml-fallback>
+</cml>
+
+<!-- cml template. address. -->
+<cml style="padding:0;" class="hidden cml-template-addr">
+    <table><tr><td><img src="package.png" style="width:100px;padding:20px"></td>
+    <td>Which address do you want your package shipped to?</td></tr></table>
+    <cml-address></cml-address>
+    <cml-fallback>
+        Can you please send us the address you'd like your package shipped to?
+    </cml-fallback>
+</cml> 
+
+<!-- cml template. hello world -->
+<cml style="padding:0;" class="hidden cml-template-hello">
+    <div class="jumbotron" style="background-color:#ccc">
+        <h1>Hello, world!</h1>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div>
+    <cml-fallback>Hello world.</cml-fallback>
+</cml>
+
+<!-- youtube video -->
+<cml style="padding:0;" class="hidden cml-template-youtube">
+    <iframe style="width:100%" src="https://www.youtube.com/embed/CSbcmacedTI" frameborder="0" allowfullscreen></iframe>
+    <cml-fallback>Youtube video https://youtu.be/CSbcmacedTI</cml-fallback>
+</cml>
+
+<!-- anim gif -->
+<cml style="padding:0;" class="hidden cml-template-animgif">
+    <img src="anim-ball.gif" style="width:100%;border-radius:0 6px 6px 0;">
+    <cml-fallback>Animated ball http://netdna.webdesignerdepot.com/uploads/2013/07/bipolar-ball.gif</cml-fallback>
+</cml>
+
+                <!-- credit card picker template -->
+                <div class="btn-group hidden template-ccardpicker" style="width:100%;" role="group" aria-label="Basic example">
+                    <button style="width:50%;border-top-left-radius:0;border-bottom-left-radius:0;" class="btn btn-primary btn-ccard-default" data-original-title="" title="">Amex - 21001</button>
+                    <button style="width:50%;border-top-right-radius:0;" class="btn btn-primary btn-ccardpicker" data-original-title="" title="">Change...</button>
+                </div>
+                
+                <!-- address picker template -->
+                <div class="hidden template-addrpicker" style="width:100%;" >
                     <iframe
                       width="100%"
                       height="120px"
@@ -335,497 +176,926 @@
                       src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
                     </iframe>
                     <div class="btn-group" style="width:100%;" role="group" aria-label="Basic example">
-                        <button type="button" style="width:33.3%;border-bottom-left-radius:0;border-top-left-radius:0;" class="btn-addr-home btn btn-primary">Home</button>
-                        <button type="button" style="width:33.3%" class="btn btn-primary">Work</button>
+                        <button type="button" style="width:33.3%;border-bottom-left-radius:0;border-top-left-radius:0;" class="btn-addr-default btn-addr-home btn btn-primary">Home</button>
+                        <button type="button" style="width:33.3%" class="btn btn-primary btn-addr-default">Work</button>
                         <button type="button" style="width:33.8%;border-top-right-radius:0;" class="btn-addrpicker btn btn-primary">Picker...</button>
                     </div>
-                    <!--<button class="btn btn-default" style="xfloat:left;">-->
-                    <!--    Home<br>-->
-                    <!--    <div style="font-size:10px;text-align:left;">2917 W Eaton St<br>-->
-                    <!--    Seattle, WA 98199</div>-->
-                    <!--</button>-->
-                    <!--<button class="btn btn-default" style="xfloat:left;">-->
-                    <!--    Work<br>-->
-                    <!--    <div style="font-size:10px;text-align:left;">2401 4th Ave<br>-->
-                    <!--    Suite 600<br>-->
-                    <!--    Seattle, WA 98199</div>-->
-                    <!--</button>-->
                 </div>
-            </div>
-            
-            
-    
-            <div class="bubble-out hidden bubble-s4">
-                <div class="bubble-out-triangle">
-                </div>
-                <div class="bubble-content bubble-out-content">
-                    2401 4th Ave, Suite 600, Seattle, WA 98121
-                </div>
-            </div>
-            
-            
-    
-            <div class="bubble-in hidden bubble-s5">
-                <div class="bubble-in-triangle">
-                </div>
-                <div class="bubble-content bubble-in-content">
-                Ok, we can deliver there. What would you like?
-                <!--<button class="btn btn-default" style="xfloat:left;">Menu</button>-->
-                <img src="jimmyjohn-menu.png" style="width:280px;">
-                </div>
-            </div>
-
-
-    
-            <div class="bubble-out hidden bubble-s6">
-                <div class="bubble-out-triangle">
-                </div>
-                <div class="bubble-content bubble-out-content">
-                    3 #5 Vito, 1 J.J.B.L.T, 1 #1 Pepe, 3 BBQ Jimmy Chips, 
-                    2 Salt & Vineger Jimmy Chips, 4 Pickle (Whole),
-                    1 Chocolate Chunk Cookie
-                </div>
-            </div>
-
-
-            <div class="bubble-in hidden bubble-s7">
-                <div class="bubble-in-triangle">
-                </div>
-                <div class="bubble-content bubble-in-content" style="padding:0;">
                 
-                    <p style="padding:10px 20px 0 20px;">
-                        John, please verify your order
-                    </p>
-                    
-                    <table class="table table-condensed">
-                        <tr>
-                            <td>
-                                <span class="badge">3</span>
-                            </td>
-                            <td>
-                                #5 Vito
-                            </td>
-                            <td>
-                                $17.97
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">1</span>
-                            </td>
-                            <td>
-                                #1 Pepe
-                            </td>
-                            <td>
-                                $5.99
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">1</span>
-                            </td>
-                            <td>
-                                J.J.B.L.T
-                            </td>
-                            <td>
-                                $5.99
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">3</span>
-                            </td>
-                            <td>
-                                BBQ Jimmy Chips
-                            </td>
-                            <td>
-                                $4.50
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">2</span>
-                            </td>
-                            <td>
-                                Salt & Vinegar Jimmy Chips
-                            </td>
-                            <td>
-                                $3.00
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">4</span>
-                            </td>
-                            <td>
-                                Jumbo Kosher Dill Pickle (Whole)
-                            </td>
-                            <td>
-                                $6.00
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">1</span>
-                            </td>
-                            <td>
-                                Chocolate Chunk Cookie
-                            </td>
-                            <td>
-                                $1.75
-                            </td>
-                        </tr>
-                        <tr class="active">
-                            <td>
-                                
-                            </td>
-                            <td align="right">
-                                <b>Subtotal</b>
-                            </td>
-                            <td>
-                                $45.20
-                            </td>
-                        </tr>
-                        <tr class="active">
-                            <td>
-                                
-                            </td>
-                            <td align="right">
-                                <b>Delivery</b>
-                            </td>
-                            <td>
-                                $7.50
-                            </td>
-                        </tr>
-                        <tr class="active">
-                            <td>
-                                
-                            </td>
-                            <td align="right">
-                                <b>Tax</b>
-                            </td>
-                            <td>
-                                $5.06
-                            </td>
-                        </tr>
-                        <tr class="active">
-                            <td>
-                                
-                            </td>
-                            <td align="right">
-                                <b>Total</b>
-                            </td>
-                            <td>
-                                $57.76
-                            </td>
-                        </tr>
-                    </table>
-                    
-                    <p style="padding:0 0px 0 20px;">What credit card would you like to use to complete your order?</p>
-                    
-                    <div class="btn-group" style="width:100%;" role="group" aria-label="Basic example">
-                        <button style="width:50%;border-top-left-radius:0;border-bottom-left-radius:0;" class="btn btn-primary">Amex - 21001</button>
-                        <button style="width:50%;border-top-right-radius:0;" class="btn btn-primary btn-ccardpicker">Change...</button>
+                <button class="btn btn-primary btn-sendhybrid">Send</button>
+                
+                <button class="btn btn-primary btn-clearbubbles">Clear Bubbles</button>
+            </div>
+        
+            <!-- end left button col area -->
+        </td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td class="cml-text-interface" style="position:relative;">
+            
+            <div class="cml-text-wrapper" style="position:relative;top:0;bottom:0;right:0;left:0;">
+                
+                <!-- start CML texting interface -->
+                
+                
+            <!-- Overlay for placement -->
+            <div class="overlay-placement">
+                <!--<img src="screen.png">-->
+            </div>
+            
+            
+            <!-- Android Pulldown -->
+            <div class="android-pulldown hidden">
+                <img class="notify-mainmenu" src="notify-top.png" style="width:100%">
+                <div style="height:283px"></div>
+                <div class="notify-jimmyjohn">
+                    <div class="notify-wrapper">
+                        <table class="notify-table">
+                            <tr valign="middle">
+                                <td>
+                                    <img src="jimmyjohn-logo.png" style="width:60px;padding-right:10px;">
+                                </td>
+                                <td>
+                                    <p style="margin-bottom:0;">Your order is on its way...</p>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                
-                </div>
-            </div>
-            
-            <div class="bubble-out hidden bubble-s8">
-                <div class="bubble-out-triangle">
-                </div>
-                <div class="bubble-content bubble-out-content">
-                   Oh, sorry, I needed 4 choc chip cookies
-                </div>
-            </div>
-
-
-            <div class="bubble-in hidden bubble-s9">
-                <div class="bubble-in-triangle">
-                </div>
-                <div class="bubble-content bubble-in-content" style="padding:0;">
-                
-                    <p style="padding:10px 20px 0 20px;">
-                        Ok, John. I fixed your order.
-                        Please verify.
-                    </p>
-                    
-                    <table class="table table-condensed">
-                        <tr>
-                            <td>
-                                <span class="badge">3</span>
-                            </td>
-                            <td>
-                                #5 Vito
-                            </td>
-                            <td>
-                                $17.97
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">1</span>
-                            </td>
-                            <td>
-                                #1 Pepe
-                            </td>
-                            <td>
-                                $5.99
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">1</span>
-                            </td>
-                            <td>
-                                J.J.B.L.T
-                            </td>
-                            <td>
-                                $5.99
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">3</span>
-                            </td>
-                            <td>
-                                BBQ Jimmy Chips
-                            </td>
-                            <td>
-                                $4.50
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">2</span>
-                            </td>
-                            <td>
-                                Salt & Vinegar Jimmy Chips
-                            </td>
-                            <td>
-                                $3.00
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="badge">4</span>
-                            </td>
-                            <td>
-                                Jumbo Kosher Dill Pickle (Whole)
-                            </td>
-                            <td>
-                                $6.00
-                            </td>
-                        </tr>
-                        <tr class="warning">
-                            <td>
-                                <span class="badge">4</span>
-                            </td>
-                            <td>
-                                Chocolate Chunk Cookie
-                            </td>
-                            <td>
-                                $7.00
-                            </td>
-                        </tr>
-                        <tr class="active warning">
-                            <td>
-                                
-                            </td>
-                            <td align="right">
-                                <b>Subtotal</b>
-                            </td>
-                            <td>
-                                $50.45
-                            </td>
-                        </tr>
-                        <tr class="active">
-                            <td>
-                                
-                            </td>
-                            <td align="right">
-                                <b>Delivery</b>
-                            </td>
-                            <td>
-                                $7.50
-                            </td>
-                        </tr>
-                        <tr class="active warning">
-                            <td>
-                                
-                            </td>
-                            <td align="right">
-                                <b>Tax</b>
-                            </td>
-                            <td>
-                                $5.56
-                            </td>
-                        </tr>
-                        <tr class="active warning">
-                            <td>
-                                
-                            </td>
-                            <td align="right">
-                                <b>Total</b>
-                            </td>
-                            <td>
-                                $63.51
-                            </td>
-                        </tr>
-                    </table>
-                    
-                    <p style="padding:0 0px 0 20px;">What credit card would you like to use to complete your order?</p>
-                    
-                    <div class="btn-group" style="width:100%;" role="group" aria-label="Basic example">
-                        <button style="width:50%;border-top-left-radius:0;border-bottom-left-radius:0;" class="btn btn-primary">Amex - 21001</button>
-                        <button style="width:50%;border-top-right-radius:0;" class="btn btn-primary btn-ccardpicker">Change...</button>
-                    </div>
-                
-                </div>
-            </div>
-                
-            <!--<div class="hidden">-->
-                
-            <div class="bubble-out hidden bubble-s10">
-                <div class="bubble-out-triangle">
-                </div>
-                <div class="bubble-content bubble-out-content">
-                    Visa **** **** *** 9010<br>
-                    Exp: 12/20<br>
-                    <!--CID: ***-->
-                </div>
-            </div>
-            
-            
-            
-            <div class="bubble-in hidden bubble-s11">
-                <div class="bubble-in-triangle">
-                </div>
-                <div class="bubble-content bubble-in-content" style="padding:0;">
-                
-                <p style="padding:10px;">
-                    We will get that delivered to you in 15 minutes. You can watch the delivery 
-                status on the map below or in your Android notification pulldown.
-                </p>
-                
-                <iframe
+                    <iframe
                       width="100%"
-                      height="80px"
+                      height="120px"
                       frameborder="0" style="border:0; margin-bottom:-6px;"
                       src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
                     </iframe>
+                    <div class="notify-wrapper">
+                        <p style="color:#499ebd;text-align:right;margin:0 10px 0 0;">TEXT STORE</p>
+                    </div>
                 </div>
+                <p class="pull-left" style="color:white;text-align:right;margin:5px 10px 0 7px;">NOTIFICATION SETTINGS</p>
+                <p style="color:white;text-align:right;margin:5px 7px 0 0;">CLEAR</p>
             </div>
-
             
-
-            <div class="bubble-in hidden bubble-s12">
-                <div class="bubble-in-triangle">
-                </div>
-                <div class="bubble-content bubble-in-content">
-                    <table><tr>
-                    <td>
-                        <img src="jimmyjohn-jeff.png" style="width:60px;Xfloat: left;margin-right: 10px;">
-                    </td>
-                    <td>
-                        Jeff just left the store and is bike delivering your order. Should be there 
-                    in 10 minutes.
-                    </td>
-                    </tr></table>
+            <!-- credit card picker -->
+            <div class="dlg-ccardpicker dlg-full hidden" xstyle="position:absolute;">
                 
+                <div class="xmodal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Credit Card Picker</h4>
+                  </div>
+                  <div class="modal-body">
+                      
+                      <div class="btn-group-vertical" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default btn-ccard-visa">
+                          <table style="width:100%;align:left;">
+                            <tr valign="top" align="left">
+                                <td style="width:40%;"><img src="ccard-visa.png" style="width:95%;"></td>
+                                <td style="width:60%;"><b>Personal - Visa</b><br>
+                                4000 1234 5678 9010<br>
+                                Exp: 12/20</td>
+                            </tr>
+                        </table>
+                      </button>
+                      <button type="button" class="btn btn-default btn-ccard-amex">
+                          <table style="width:100%;align:left;">
+                            <tr valign="top" align="left">
+                                <td style="width:40%;"><img src="ccard-amex.png" style="width:95%;"></td>
+                                <td style="width:60%;"><b>Work - American Express Gold</b><br>
+                                3759 876543 21001<br>
+                                Exp: 04/22</td>
+                            </tr>
+                        </table>
+                      </button>
+                      <button type="button" class="btn btn-primary">Add New Card...</button>
+                      </div>
                     
-                </div>
+                   
+                    
+                  </div>
+                  <div class="modal-footer hidden">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->   
+                
             </div>
             
-            <div class="bubble-in hidden bubble-s13">
-                <div class="bubble-in-triangle">
+            <!-- address picker -->
+            <div class="dlg-addrpicker dlg-full hidden" xstyle="position:absolute;">
+                
+                <div class="xmodal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Address Picker</h4>
+                  </div>
+                  <div class="modal-body">
+                      
+                      <div class="btn-group-vertical" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default btn-addr-home">
+                          <table style="width:100%;align:left;">
+                            <tr valign="top" align="left">
+                                <td style="width:40%;"><img src="addr-home.png" style="width:95%;"></td>
+                                <td style="width:60%;"><b>Home</b><br>
+                                2917 W Eaton St<br>
+                                Seattle, WA 98199</td>
+                            </tr>
+                        </table>
+                      </button>
+                      <button type="button" class="btn btn-default btn-addr-work">
+                          <table style="width:100%;align:left;">
+                            <tr valign="top" align="left">
+                                <td style="width:40%;"><img src="addr-work.png" style="width:95%;"></td>
+                                <td style="width:60%;"><b>Work</b><br>
+                                2401 4th Ave<br>
+                                Suite 600<br>
+                                Seattle, WA 98121
+                                </td>
+                            </tr>
+                        </table>
+                      </button>
+                      <button type="button" class="btn btn-default btn-addr-boise">
+                          <table style="width:100%;align:left;">
+                            <tr valign="top" align="left">
+                                <td style="width:40%;"><img src="addr-boise.png" style="width:95%;"></td>
+                                <td style="width:60%;"><b>Boise Office</b><br>
+                                123 Main St<br>
+                                Suite 200<br>
+                                Boise, ID 83702
+                                </td>
+                            </tr>
+                        </table>
+                      </button>
+                      <button type="button" class="btn btn-primary">Add New Address...</button>
+                      </div>
+                    
+                   
+                    
+                  </div>
+                  <div class="modal-footer hidden">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->   
+                
+            </div>
+            
+    
+            <div class="panel-heading">
+                
+                <div class="topbar">
+                    <img src="topbar-black.png" style="width:100%">
                 </div>
-                <div class="bubble-content bubble-in-content">
-                <table><tr>
+                
+                <!-- Generic -->
+                <table class="top-phone-region top-phone-generic hidden" style="height:70px;">
+                <tr valign="middle">
                     <td>
-                        <img src="jimmyjohn-jeff.png" style="width:60px;Xfloat: left;margin-right: 10px;">
+                        <img class="arrow" src="arrow.png">
+                    </td>
+                    <td class="col-compose">
+                        <div class="phone phone-number">
+                            (206) 434-9499
+                        </div>
+                        <div class="phone phone-desc">
+                            Mobile
+                        </div>
                     </td>
                     <td>
-                         Hi John, I'm in the lobby of the building but can't get up the elevators 
-                because they're locked.
+                        <img class="phone-img" src="phone.png">
                     </td>
-                    </tr></table>
+                    <td>
+                        <img class="dots" src="dots.png">
+                    </td>
+                </tr>
+                </table>
+                
+                <!-- Jimmy John -->
+                <table class="top-phone-region top-phone-jimmyjohn xhidden" style="height:70px;">
+                <tr valign="middle">
+                    <td>
+                        <img class="arrow" src="arrow.png" style="margin-right:10px;">
+                    </td>
+                    <td>
+                        <img src="lockicon-inverted.png" class="hidden lockicon" style="xmargin-left:10px;height:10px;margin-bottom:30px;">
+                    </td>
+                    <td>
+                        <img src="jimmyjohn-logo.png" class="hidden logo-jimmyjohn" style="margin-left:2px;height:40px;">
+                    </td>
+                    <td class="col-compose" style="xtext-align:center;color:white;">
+                        <div style="xline-height:12px;font-size:18px;">South Lake Union Store</div>
+                        <div style="line-height:1opx;font-size:12px;">(206) 434-9499</div>
+                    </td>
+                    <td>
+                        <img class="phone-img" src="phone.png">
+                    </td>
+                    <td>
+                        <img class="dots" src="dots.png">
+                    </td>
+                </tr>
+                </table>
+                
+                <!-- amex -->
+                <table class="top-phone-region top-phone-amex hidden" style="height:70px;">
+                <tr valign="middle">
+                    <td>
+                        <img class="arrow" src="arrow.png" style="margin-right:10px;">
+                    </td>
+                    <td>
+                        <img src="lockicon-inverted.png" class="xhidden lockicon" style="xmargin-left:10px;height:10px;margin-bottom:30px;margin-right:6px;">
+                    </td>
+                    <td>
+                        <img src="amex.png" class="xhidden logo-jimmyjohn" style="margin-left:2px;height:40px;">
+                    </td>
+                    <td class="col-compose" style="xtext-align:center;color:white;">
+                        <div style="line-height:13px;font-size:16px;">American Express</div>
+                        <div style="xline-height:11px;font-size:10px;">Customer Service</div>
+                        <div style="xline-height:10px;font-size:11px;">(800) 528-4800</div>
+                    </td>
+                    <td>
+                        <img class="phone-img" src="phone.png">
+                    </td>
+                    <td>
+                        <img class="dots" src="dots.png">
+                    </td>
+                </tr>
+                </table>
+    
+            </div>
+            <div class="panel-body">
+                
+                <!-- template -->
+                <div class="bubble-in hidden bubble-template">
+                    <div class="bubble-in-triangle">
+                    </div>
+                    <div class="bubble-content bubble-in-content">
+                    </div>
+                </div>
+                
+                <div class="bubble-out hidden bubble-template">
+                    <div class="bubble-out-triangle">
+                    </div>
+                    <div class="bubble-content bubble-out-content">
+                    </div>
+                </div>
+    
+                <div class="bubble-in hidden bubble-s1">
+                    <div class="bubble-in-triangle">
+                    </div>
+                    <div class="bubble-content bubble-in-content" xstyle="padding:0;">
+                        <!--<p>Hi John</p>-->
+                        <p style="padding: 0;">Hi John, your last order was 1 #5 Vito, 1 
+                        Jalapeno Jimmy Chips, and 1 Jumbo Kosher Dill Pickle.</p>
+                        <div style="padding: 0 0 10px 0;">
+                            <button class="btn btn-primary">Repeat Last Order</button>
+                            <button class="btn btn-primary btn-delivery">Delivery</button>
+                            <button class="btn btn-primary">Pickup</button>
+                        </div>
+                        
+                        <p>You have 6 stars on your punch card. 3 more stars and you get a
+                        free sandwich.</p>
+                        <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
+                        <div style="font-size:24px;position:relative;">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            
+                            <span style="font-size:12px;position:absolute;transform:translate(0,6px) rotate(-45deg);">Free</span>
+                            
+                        </div>
+    
+                    </div>
+                </div>
+                
                
-                </div>
-            </div>
-
-            
-            
-
-            
-            <div class="bubble-out hidden bubble-s14">
-                <div class="bubble-out-triangle">
-                </div>
-                <div class="bubble-content bubble-out-content">
-                    Will come get you
-                </div>
-            </div>
-            
-
-
-            </div>
-            
-        </div>
-        <div class="panel-footer">
-            
-            <!-- Jimmy John -->
-            <div class="banner hidden" style="border-bottom:1px solid #ddd; ">
-                <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <!--<div class="jimmyjohn-sidebanner"></div>-->
-                <div class="jimmyjohn-wrapper" style="padding:14px;">
-                    <p style="padding: 0;">Hi John, your last order was 1 #5 Vito, 1 
-                    Jalapeno Jimmy Chips, and 1 Jumbo Kosher Dill Pickle.</p>
-                    <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
-                    <div style="padding: 0;">
-                        <button class="btn btn-primary">Delivery</button>
-                        <button class="btn btn-primary">Pickup</button>
-                        <button class="btn btn-primary">Repeat Last Order</button>
+                
+    
+                <div class="bubble-out hidden bubble-s2">
+                    <div class="bubble-out-triangle">
+                    </div>
+                    <div class="bubble-content bubble-out-content">
+                        Delivery. 
                     </div>
                 </div>
-            </div>
-            
-            <div class="banner hidden" style="border-bottom:1px solid #ddd; ">
-                <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <!--<div class="jimmyjohn-sidebanner"></div>-->
-                <div class="jimmyjohn-wrapper" style="padding:14px;">
-                    <p style="padding: 0;">[icon] 2 #5 Vitos</p>
-                    <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
-                    <div style="padding: 0;">
-                        <button class="btn btn-primary">Order It</button>
+       
+     
+                <div class="bubble-in hidden bubble-s3">
+                    <div class="bubble-in-triangle">
+                    </div>
+                    <div class="bubble-content bubble-in-content" style="padding:0;">
+                        <p style="padding:10px;">
+                        Hi John, sure, we can get that delivery order out to you. What delivery 
+                        address would you like it delivered to?
+                        </p>
+                        
+                        <iframe
+                          width="100%"
+                          height="120px"
+                          frameborder="0" style="border:0; margin-bottom:-6px;"
+                          src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
+                        </iframe>
+                        <div class="btn-group" style="width:100%;" role="group" aria-label="Basic example">
+                            <button type="button" style="width:33.3%;border-bottom-left-radius:0;border-top-left-radius:0;" class="btn-addr-home btn btn-primary">Home</button>
+                            <button type="button" style="width:33.3%" class="btn btn-primary">Work</button>
+                            <button type="button" style="width:33.8%;border-top-right-radius:0;" class="btn-addrpicker btn btn-primary">Picker...</button>
+                        </div>
+                        <!--<button class="btn btn-default" style="xfloat:left;">-->
+                        <!--    Home<br>-->
+                        <!--    <div style="font-size:10px;text-align:left;">2917 W Eaton St<br>-->
+                        <!--    Seattle, WA 98199</div>-->
+                        <!--</button>-->
+                        <!--<button class="btn btn-default" style="xfloat:left;">-->
+                        <!--    Work<br>-->
+                        <!--    <div style="font-size:10px;text-align:left;">2401 4th Ave<br>-->
+                        <!--    Suite 600<br>-->
+                        <!--    Seattle, WA 98199</div>-->
+                        <!--</button>-->
                     </div>
                 </div>
+                
+                
+        
+                <div class="bubble-out hidden bubble-s4">
+                    <div class="bubble-out-triangle">
+                    </div>
+                    <div class="bubble-content bubble-out-content">
+                        2401 4th Ave, Suite 600, Seattle, WA 98121
+                    </div>
+                </div>
+                
+                
+        
+                <div class="bubble-in hidden bubble-s5">
+                    <div class="bubble-in-triangle">
+                    </div>
+                    <div class="bubble-content bubble-in-content">
+                    Ok, we can deliver there. What would you like?
+                    <!--<button class="btn btn-default" style="xfloat:left;">Menu</button>-->
+                    <img src="jimmyjohn-menu.png" style="width:280px;">
+                    </div>
+                </div>
+    
+    
+        
+                <div class="bubble-out hidden bubble-s6">
+                    <div class="bubble-out-triangle">
+                    </div>
+                    <div class="bubble-content bubble-out-content">
+                        3 #5 Vito, 1 J.J.B.L.T, 1 #1 Pepe, 3 BBQ Jimmy Chips, 
+                        2 Salt & Vineger Jimmy Chips, 4 Pickle (Whole),
+                        1 Chocolate Chunk Cookie
+                    </div>
+                </div>
+    
+    
+                <div class="bubble-in hidden bubble-s7">
+                    <div class="bubble-in-triangle">
+                    </div>
+                    <div class="bubble-content bubble-in-content" style="padding:0;">
+                    
+                        <p style="padding:10px 20px 0 20px;">
+                            John, please verify your order
+                        </p>
+                        
+                        <table class="table table-condensed">
+                            <tr>
+                                <td>
+                                    <span class="badge">3</span>
+                                </td>
+                                <td>
+                                    #5 Vito
+                                </td>
+                                <td>
+                                    $17.97
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">1</span>
+                                </td>
+                                <td>
+                                    #1 Pepe
+                                </td>
+                                <td>
+                                    $5.99
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">1</span>
+                                </td>
+                                <td>
+                                    J.J.B.L.T
+                                </td>
+                                <td>
+                                    $5.99
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">3</span>
+                                </td>
+                                <td>
+                                    BBQ Jimmy Chips
+                                </td>
+                                <td>
+                                    $4.50
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">2</span>
+                                </td>
+                                <td>
+                                    Salt & Vinegar Jimmy Chips
+                                </td>
+                                <td>
+                                    $3.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">4</span>
+                                </td>
+                                <td>
+                                    Jumbo Kosher Dill Pickle (Whole)
+                                </td>
+                                <td>
+                                    $6.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">1</span>
+                                </td>
+                                <td>
+                                    Chocolate Chunk Cookie
+                                </td>
+                                <td>
+                                    $1.75
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                <td>
+                                    
+                                </td>
+                                <td align="right">
+                                    <b>Subtotal</b>
+                                </td>
+                                <td>
+                                    $45.20
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                <td>
+                                    
+                                </td>
+                                <td align="right">
+                                    <b>Delivery</b>
+                                </td>
+                                <td>
+                                    $7.50
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                <td>
+                                    
+                                </td>
+                                <td align="right">
+                                    <b>Tax</b>
+                                </td>
+                                <td>
+                                    $5.06
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                <td>
+                                    
+                                </td>
+                                <td align="right">
+                                    <b>Total</b>
+                                </td>
+                                <td>
+                                    $57.76
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <p style="padding:0 0px 0 20px;">What credit card would you like to use to complete your order?</p>
+                        
+                        <div class="btn-group" style="width:100%;" role="group" aria-label="Basic example">
+                            <button style="width:50%;border-top-left-radius:0;border-bottom-left-radius:0;" class="btn btn-primary">Amex - 21001</button>
+                            <button style="width:50%;border-top-right-radius:0;" class="btn btn-primary btn-ccardpicker">Change...</button>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+                <div class="bubble-out hidden bubble-s8">
+                    <div class="bubble-out-triangle">
+                    </div>
+                    <div class="bubble-content bubble-out-content">
+                       Oh, sorry, I needed 4 choc chip cookies
+                    </div>
+                </div>
+    
+    
+                <div class="bubble-in hidden bubble-s9">
+                    <div class="bubble-in-triangle">
+                    </div>
+                    <div class="bubble-content bubble-in-content" style="padding:0;">
+                    
+                        <p style="padding:10px 20px 0 20px;">
+                            Ok, John. I fixed your order.
+                            Please verify.
+                        </p>
+                        
+                        <table class="table table-condensed">
+                            <tr>
+                                <td>
+                                    <span class="badge">3</span>
+                                </td>
+                                <td>
+                                    #5 Vito
+                                </td>
+                                <td>
+                                    $17.97
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">1</span>
+                                </td>
+                                <td>
+                                    #1 Pepe
+                                </td>
+                                <td>
+                                    $5.99
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">1</span>
+                                </td>
+                                <td>
+                                    J.J.B.L.T
+                                </td>
+                                <td>
+                                    $5.99
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">3</span>
+                                </td>
+                                <td>
+                                    BBQ Jimmy Chips
+                                </td>
+                                <td>
+                                    $4.50
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">2</span>
+                                </td>
+                                <td>
+                                    Salt & Vinegar Jimmy Chips
+                                </td>
+                                <td>
+                                    $3.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="badge">4</span>
+                                </td>
+                                <td>
+                                    Jumbo Kosher Dill Pickle (Whole)
+                                </td>
+                                <td>
+                                    $6.00
+                                </td>
+                            </tr>
+                            <tr class="warning">
+                                <td>
+                                    <span class="badge">4</span>
+                                </td>
+                                <td>
+                                    Chocolate Chunk Cookie
+                                </td>
+                                <td>
+                                    $7.00
+                                </td>
+                            </tr>
+                            <tr class="active warning">
+                                <td>
+                                    
+                                </td>
+                                <td align="right">
+                                    <b>Subtotal</b>
+                                </td>
+                                <td>
+                                    $50.45
+                                </td>
+                            </tr>
+                            <tr class="active">
+                                <td>
+                                    
+                                </td>
+                                <td align="right">
+                                    <b>Delivery</b>
+                                </td>
+                                <td>
+                                    $7.50
+                                </td>
+                            </tr>
+                            <tr class="active warning">
+                                <td>
+                                    
+                                </td>
+                                <td align="right">
+                                    <b>Tax</b>
+                                </td>
+                                <td>
+                                    $5.56
+                                </td>
+                            </tr>
+                            <tr class="active warning">
+                                <td>
+                                    
+                                </td>
+                                <td align="right">
+                                    <b>Total</b>
+                                </td>
+                                <td>
+                                    $63.51
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <p style="padding:0 0px 0 20px;">What credit card would you like to use to complete your order?</p>
+                        
+                        <div class="btn-group" style="width:100%;" role="group" aria-label="Basic example">
+                            <button style="width:50%;border-top-left-radius:0;border-bottom-left-radius:0;" class="btn btn-primary">Amex - 21001</button>
+                            <button style="width:50%;border-top-right-radius:0;" class="btn btn-primary btn-ccardpicker">Change...</button>
+                        </div>
+                    
+                    </div>
+                </div>
+                    
+                <!--<div class="hidden">-->
+                    
+                <div class="bubble-out hidden bubble-s10">
+                    <div class="bubble-out-triangle">
+                    </div>
+                    <div class="bubble-content bubble-out-content">
+                        Visa **** **** *** 9010<br>
+                        Exp: 12/20<br>
+                        <!--CID: ***-->
+                    </div>
+                </div>
+                
+                
+                
+                <div class="bubble-in hidden bubble-s11">
+                    <div class="bubble-in-triangle">
+                    </div>
+                    <div class="bubble-content bubble-in-content" style="padding:0;">
+                    
+                    <p style="padding:10px;">
+                        We will get that delivered to you in 15 minutes. You can watch the delivery 
+                    status on the map below or in your Android notification pulldown.
+                    </p>
+                    
+                    <iframe
+                          width="100%"
+                          height="80px"
+                          frameborder="0" style="border:0; margin-bottom:-6px;"
+                          src="https://www.google.com/maps/embed/v1/view?center=47.6204230,-122.3493550&zoom=13&key=AIzaSyBL30SegVRjp4Njj6lL2lVPqg5C3uSbSqw" xallowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+    
+                
+    
+                <div class="bubble-in hidden bubble-s12">
+                    <div class="bubble-in-triangle">
+                    </div>
+                    <div class="bubble-content bubble-in-content">
+                        <table><tr>
+                        <td>
+                            <img src="jimmyjohn-jeff.png" style="width:60px;Xfloat: left;margin-right: 10px;">
+                        </td>
+                        <td>
+                            Jeff just left the store and is bike delivering your order. Should be there 
+                        in 10 minutes.
+                        </td>
+                        </tr></table>
+                    
+                        
+                    </div>
+                </div>
+                
+                <div class="bubble-in hidden bubble-s13">
+                    <div class="bubble-in-triangle">
+                    </div>
+                    <div class="bubble-content bubble-in-content">
+                    <table><tr>
+                        <td>
+                            <img src="jimmyjohn-jeff.png" style="width:60px;Xfloat: left;margin-right: 10px;">
+                        </td>
+                        <td>
+                             Hi John, I'm in the lobby of the building but can't get up the elevators 
+                    because they're locked.
+                        </td>
+                        </tr></table>
+                   
+                    </div>
+                </div>
+    
+                
+                
+    
+                
+                <div class="bubble-out hidden bubble-s14">
+                    <div class="bubble-out-triangle">
+                    </div>
+                    <div class="bubble-content bubble-out-content">
+                        Will come get you
+                    </div>
+                </div>
+                
+    
+            </div>
+            <div class="panel-footer">
+                
+                <!-- Jimmy John -->
+                <div class="banner hidden" style="border-bottom:1px solid #ddd; ">
+                    <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <!--<div class="jimmyjohn-sidebanner"></div>-->
+                    <div class="jimmyjohn-wrapper" style="padding:14px;">
+                        <p style="padding: 0;">Hi John, your last order was 1 #5 Vito, 1 
+                        Jalapeno Jimmy Chips, and 1 Jumbo Kosher Dill Pickle.</p>
+                        <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
+                        <div style="padding: 0;">
+                            <button class="btn btn-primary">Delivery</button>
+                            <button class="btn btn-primary">Pickup</button>
+                            <button class="btn btn-primary">Repeat Last Order</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="banner hidden" style="border-bottom:1px solid #ddd; ">
+                    <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <!--<div class="jimmyjohn-sidebanner"></div>-->
+                    <div class="jimmyjohn-wrapper" style="padding:14px;">
+                        <p style="padding: 0;">[icon] 2 #5 Vitos</p>
+                        <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
+                        <div style="padding: 0;">
+                            <button class="btn btn-primary">Order It</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <table><tr valign="middle">
+                    <td>
+                        <div class="graycircle plussign">+</div>
+                    </td>
+                    <td class="col-compose">
+                        <input class="compose-box" type="textarea" name="compose"
+                        placeholder="Type a message..."
+                        />
+                    </td>
+                    <td>
+                        <div class="smiley">
+                            <img src="smiley.png" style="width:24px;">    
+                        </div>
+                    </td>
+                    <td>
+                        <div class="graycircle microphone">
+                            <img src="mic.png" style="width:18px;">
+                        </div>
+                        <div class="graycircle send-arrow hidden">
+                            <img src="send-arrow.png" style="width:21px;">
+                        </div>
+                    </td>
+                </tr></table>
+                
             </div>
             
-            <table><tr valign="middle">
-                <td>
-                    <div class="graycircle plussign">+</div>
-                </td>
-                <td class="col-compose">
-                    <input class="compose-box" type="textarea" name="compose"
-                    placeholder="Type a message..."
-                    />
-                </td>
-                <td>
-                    <div class="smiley">
-                        <img src="smiley.png" style="width:24px;">    
-                    </div>
-                </td>
-                <td>
-                    <div class="graycircle microphone">
-                        <img src="mic.png" style="width:18px;">
-                    </div>
-                </td>
-            </tr></table>
+            <p class="inteface-title">CML Text Interface</p>
+            <!-- end div wrapper -->
+        </div>     
+            <!-- end column for CML interface -->
+        </td>
+        <td>&nbsp;&nbsp;</td>
+        <td class="generic-text-interface">
+            <!-- start generic texting interface -->
             
-            </td></tr></table>
+            
+            <div class="panel-heading">
+        
+                <div class="topbar">
+                    <img src="topbar-black.png" style="width:100%">
+                </div>
+                
+                <!-- Generic -->
+                <table class="top-phone-region top-phone-generic xhidden" style="height:70px;">
+                <tr valign="middle">
+                    <td>
+                        <img class="arrow" src="arrow.png">
+                    </td>
+                    <td class="col-compose">
+                        <div class="phone phone-number">
+                            (206) 434-9499
+                        </div>
+                        <div class="phone phone-desc">
+                            Mobile
+                        </div>
+                    </td>
+                    <td>
+                        <img class="phone-img" src="phone.png">
+                    </td>
+                    <td>
+                        <img class="dots" src="dots.png">
+                    </td>
+                </tr>
+                </table>
+                
+            </div>
+            <div class="panel-body">
+            </div>
+            <div class="panel-footer">
+            
+                <!-- Jimmy John -->
+                <div class="banner hidden" style="border-bottom:1px solid #ddd; ">
+                    <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <!--<div class="jimmyjohn-sidebanner"></div>-->
+                    <div class="jimmyjohn-wrapper" style="padding:14px;">
+                        <p style="padding: 0;">Hi John, your last order was 1 #5 Vito, 1 
+                        Jalapeno Jimmy Chips, and 1 Jumbo Kosher Dill Pickle.</p>
+                        <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
+                        <div style="padding: 0;">
+                            <button class="btn btn-primary">Delivery</button>
+                            <button class="btn btn-primary">Pickup</button>
+                            <button class="btn btn-primary">Repeat Last Order</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="banner hidden" style="border-bottom:1px solid #ddd; ">
+                    <button type="button" style="margin-right:10px;margin-top:6px;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <!--<div class="jimmyjohn-sidebanner"></div>-->
+                    <div class="jimmyjohn-wrapper" style="padding:14px;">
+                        <p style="padding: 0;">[icon] 2 #5 Vitos</p>
+                        <!--<img src="jimmyjohn-logo.png" style="height:40px;margin:6px;">-->
+                        <div style="padding: 0;">
+                            <button class="btn btn-primary">Order It</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <table><tr valign="middle">
+                    <td>
+                        <div class="graycircle plussign">+</div>
+                    </td>
+                    <td class="col-compose">
+                        <input class="compose-box" type="textarea" name="compose"
+                        placeholder="Type a message..."
+                        />
+                    </td>
+                    <td>
+                        <div class="smiley">
+                            <img src="smiley.png" style="width:24px;">    
+                        </div>
+                    </td>
+                    <td>
+                        <div class="graycircle microphone">
+                            <img src="mic.png" style="width:18px;">
+                        </div>
+                        <div class="graycircle send-arrow hidden">
+                            <img src="send-arrow.png" style="width:21px;">
+                        </div>
+                    </td>
+                </tr></table>
+                
+            </div>  
+            
+            <p class="inteface-title">Generic Text Interface</p>
+            
+            <!-- end generic texting interface -->
+        </td></tr></table>
 
 
-        </div>
+        
     </div>
 </body>
 
