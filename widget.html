@@ -234,6 +234,94 @@
                 <p style="color:white;text-align:right;margin:5px 7px 0 0;">CLEAR</p>
             </div>
             
+            <!-- ssl certificate viewer -->
+            <div class="dlg-ccardpicker dlg-full xhidden" xstyle="position:absolute;">
+                
+                <div class="xmodal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><img src="sslcert.png" style="width:30px;margin-right:10px;">Certificate</h4>
+                  </div>
+                  <div class="modal-body">
+                      
+                      <table>
+                          <tr>
+                              <td>
+                                  Issued To
+                              </td>
+                              <td class="ssl-txt">
+                                  American Express, Inc.
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Issued Subtext
+                              </td>
+                              <td class="ssl-txt">
+                                  Customer Service
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Issued Phone Number
+                              </td>
+                              <td class="ssl-txt">
+                                  (800) 528-4800
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Issued Picture
+                              </td>
+                              <td class="ssl-txt">
+                                  <img src="amex.png" style="width:50px;">
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Issued By
+                              </td>
+                              <td class="ssl-txt">
+                                  Verisign Phone Number SSL CA
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>
+                                  Valid From&nbsp;
+                              </td>
+                              <td class="ssl-txt">
+                                  8/29/2016 <span style="font-weight:normal;">to</span> 9/29/2017
+                              </td>
+                          </tr>
+                      </table>
+                      
+                      <br>
+                      <div class="ssl-mini">
+                          This phone number certificate is intended for the following purposes:
+                      </div>
+                      <ul>
+                          <li>
+                              Ensures the identity of a remote sender
+                          </li>
+                          <li>
+                              Proves your identity to a remote receiver
+                          </li>
+                      </ul>
+                      
+
+                      
+                    
+                  </div>
+                  <div class="modal-footer hidden">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->   
+                
+            </div>
+            
             <!-- credit card picker -->
             <div class="dlg-ccardpicker dlg-full hidden" xstyle="position:absolute;">
                 
@@ -373,7 +461,7 @@
                 </table>
                 
                 <!-- Jimmy John -->
-                <table class="top-phone-region top-phone-jimmyjohn xhidden" style="height:70px;">
+                <table class="top-phone-region top-phone-jimmyjohn hidden" style="height:70px;">
                 <tr valign="middle">
                     <td>
                         <img class="arrow" src="arrow.png" style="margin-right:10px;">
@@ -398,7 +486,7 @@
                 </table>
                 
                 <!-- amex -->
-                <table class="top-phone-region top-phone-amex hidden" style="height:70px;">
+                <table class="top-phone-region top-phone-amex xhidden" style="height:70px;">
                 <tr valign="middle">
                     <td>
                         <img class="arrow" src="arrow.png" style="margin-right:10px;">
@@ -1015,7 +1103,9 @@
                     </td>
                     <td class="col-compose">
                         <div class="phone phone-number">
-                            (206) 434-9499
+                            <!--(206) 434-9499-->
+                            <!--(800) 528-4800-->
+                            (888) 406-8977
                         </div>
                         <div class="phone phone-desc">
                             Mobile

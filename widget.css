@@ -319,3 +319,12 @@
         opacity: 0;
     }
 }
+
+/* SSL Classes */
+.ssl-txt {
+    font-weight: bold;
+}
+.ssl-mini {
+    font-size: smaller;
+    /*line-height: 9px;*/
+}
